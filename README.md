@@ -12,6 +12,7 @@ CSGOEmpire API Key Documentation
   - [Metadata](#metadata)
   - [Trades](#get-active-trades)
   - [Auctions](#get-active-auctions)
+  - [Settings](#settings)
   - [Deposit](#deposits):
     - [Inventory](#get-csgo-inventory)
     - [Unique Info](#get-unique-info)
@@ -408,6 +409,33 @@ Example response:
 }
 ```
 
+# Settings
+URL: https://csgoempire.com/api/v2/trading/user/settings
+Method: POST
+
+Used to update your tradelink and/or Steam API key
+
+Inputs:
+- trade_url: (required) string
+- steam_api_key : string
+
+
+Example request:
+```bash
+curl --location --request POST 'https://csgoempire.com/api/v2/trading/user/settings' \
+--header 'Authorization: Bearer {API-KEY-HERE}' \
+--header 'Content-Type: application/json' \
+--data-raw '{"trade_url":"https://steamcommunity.com/tradeoffer/new/?partner=145926386&token=zYMYgbXB"}'
+```
+
+Example response:
+```json
+{
+    "success": true,
+    "escrow_seconds": 0
+}
+```
+
 # Trade Status Enums
 Below are a list of trade statuses. Trade endpoints will return status enums.
 
@@ -431,6 +459,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Get CSGO Inventory
   URL: https://csgoempire.com/api/v2/trading/user/inventory
+  Method: GET
 
   Fetch your inventory from steam and caches it to the database for 1 hour.
 
@@ -568,13 +597,14 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Get Unique Info
   URL: https://csgoempire.com/api/v2/trading/user/inventory/unique-info
+  Method: GET
 
   Get inspected unique info for items in user inventory. Examples include float/sticker data
 
   Example Request
   ```bash
-  curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/inventory/unique-info' \
-  --header 'Authorization: Bearer {API-KEY-HERE}'
+    curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/inventory/unique-info' \
+    --header 'Authorization: Bearer {API-KEY-HERE}'
   ```
 
   Example Response:
@@ -646,6 +676,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Create Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit
+  Method: POST
 
   Description goes here
 
@@ -713,6 +744,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Cancel Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT-ID}/cancel
+  Method: POST
 
   Cancels processing deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
 
@@ -731,6 +763,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Sell Now
   URL:  https://csgoempire.com/api/v2//trading/deposit/{deposit_id}/sell
+  Method: POST
 
   Description goes here
 
@@ -763,47 +796,389 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 # Withdraw
 
   ## Get Listed Items
-  URL: 
+  URL: https://csgoempire.com/api/v2/trading/items
+  Method: GET
 
-  Description goes here
+  Get a list of all items listed on the withdrawals page
 
   Inputs:
-  ```json
-  
-  ```
+  - per_page - (required), number. How many items to fetch. Min is 1 and max is 200 for quests and 5000 for logged in user
+  - page - (required), number. Page to fetch.
+  - search - string. Item market name to search. 2 char min length.
+  - order - string. Field to use for ordering supported fields: market_value
+  - sort - string. Sorting asc or desc. Default asc
+  - auction - string. Auction only, yes/no, defaults to no.
+  - price_min - number. Minimum item current price.
+  - price_max - number. Maximum item current price.
+  - price_max_above - number. Maximum item percentage to show.
 
   Example Request
   ```bash
-  
+  curl --location --request GET 'https://csgoempire.com/api/v2/trading/items?per_page=10&page=1&price_max_above=15&sort=desc&order=market_value' \
+  --header 'Authorization: Bearer {API-KEY-HERE}
   ```
 
   Example Response:
   ```json
-
+    {
+        "current_page": 1,
+        "data": [
+            {
+                "app_id": 730,
+                "auction_auto_withdraw_failed": null,
+                "auction_ends_at": 1638207128,
+                "auction_highest_bid": null,
+                "auction_highest_bidder": null,
+                "auction_number_of_bids": 0,
+                "custom_name": null,
+                "custom_price_percentage": 20,
+                "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f65Mli7DH9tXziQTgqUY4YmmnINSUJwQ-YVnT_wS7yOzngMW07ZrOmmwj5HeObpQQtA",
+                "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f65Mli7DH9tXziQTgqUY4YmmnINSUJwQ-YVnT_wS7yOzngMW07ZrOmmwj5HeObpQQtA",
+                "inspect_details": {
+                    "defindex": 16,
+                    "paintindex": 309,
+                    "rarity": 7,
+                    "quality": 9,
+                    "paintwear": 0.04290539771318436,
+                    "paintseed": 606,
+                    "killeaterscoretype": 0,
+                    "killeatervalue": 13,
+                    "customname": null,
+                    "stickers": [
+                        {
+                            "slot": 0,
+                            "sticker_id": 4691,
+                            "wear": null,
+                            "scale": null,
+                            "rotation": null,
+                            "tint_id": null,
+                            "name": "Battle Scarred (Holo)",
+                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
+                        },
+                        {
+                            "slot": 1,
+                            "sticker_id": 4691,
+                            "wear": null,
+                            "scale": null,
+                            "rotation": null,
+                            "tint_id": null,
+                            "name": "Battle Scarred (Holo)",
+                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
+                        },
+                        {
+                            "slot": 2,
+                            "sticker_id": 4691,
+                            "wear": null,
+                            "scale": null,
+                            "rotation": null,
+                            "tint_id": null,
+                            "name": "Battle Scarred (Holo)",
+                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
+                        },
+                        {
+                            "slot": 3,
+                            "sticker_id": 4691,
+                            "wear": null,
+                            "scale": null,
+                            "rotation": null,
+                            "tint_id": null,
+                            "name": "Battle Scarred (Holo)",
+                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
+                        }
+                    ],
+                    "origin": 8,
+                    "created_at": "2021-11-15 08:35:17",
+                    "updated_at": "2021-11-21 13:47:44"
+                },
+                "is_commodity": false,
+                "market_name": "StatTrak™ M4A4 | Howl (Factory New)",
+                "market_value": 2473202,
+                "name": "StatTrak™ M4A4 | Howl (Factory New)",
+                "name_color": "CF6A32",
+                "paint_index": 309,
+                "paint_seed": 606,
+                "preview_id": "3a3717b91cb5",
+                "price_is_unreliable": true,
+                "stickers": [
+                    {
+                        "slot": 0,
+                        "sticker_id": 4691,
+                        "wear": null,
+                        "scale": null,
+                        "rotation": null,
+                        "tint_id": null,
+                        "name": "Battle Scarred (Holo)",
+                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
+                    },
+                    {
+                        "slot": 1,
+                        "sticker_id": 4691,
+                        "wear": null,
+                        "scale": null,
+                        "rotation": null,
+                        "tint_id": null,
+                        "name": "Battle Scarred (Holo)",
+                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
+                    },
+                    {
+                        "slot": 2,
+                        "sticker_id": 4691,
+                        "wear": null,
+                        "scale": null,
+                        "rotation": null,
+                        "tint_id": null,
+                        "name": "Battle Scarred (Holo)",
+                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
+                    },
+                    {
+                        "slot": 3,
+                        "sticker_id": 4691,
+                        "wear": null,
+                        "scale": null,
+                        "rotation": null,
+                        "tint_id": null,
+                        "name": "Battle Scarred (Holo)",
+                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
+                    }
+                ],
+                "tradable": true,
+                "tradelock": false,
+                "updated_at": "2021-11-30 11:56:31",
+                "wear": 0.043,
+                "published_at": "2021-11-30T12:11:23.938614Z",
+                "id": 28360811
+            },
+            {
+                "app_id": 730,
+                "auction_auto_withdraw_failed": null,
+                "auction_ends_at": 1638037717,
+                "auction_highest_bid": null,
+                "auction_highest_bidder": null,
+                "auction_number_of_bids": 0,
+                "custom_name": null,
+                "custom_price_percentage": 15,
+                "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f65Mli7DH9tXziQTgqUY4YmmnINSUJwQ-YVnT_wS7yOzngMW07ZrOmmwj5HeObpQQtA",
+                "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f65Mli7DH9tXziQTgqUY4YmmnINSUJwQ-YVnT_wS7yOzngMW07ZrOmmwj5HeObpQQtA",
+                "inspect_details": {
+                    "defindex": 16,
+                    "paintindex": 309,
+                    "rarity": 7,
+                    "quality": 9,
+                    "paintwear": 0.03958660364151,
+                    "paintseed": 205,
+                    "killeaterscoretype": 0,
+                    "killeatervalue": 18523,
+                    "customname": null,
+                    "stickers": [
+                        {
+                            "slot": 3,
+                            "sticker_id": 3717,
+                            "wear": 0.7717340588569641,
+                            "scale": null,
+                            "rotation": null,
+                            "tint_id": null,
+                            "name": "yuurih | Katowice 2019",
+                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRWTVjfUO2u0p2DAgQ7Ng1QiaOwPhVp28zEcC9F6ZLnxILfk6ajN--Jwz0B7sQgjrrEotys31W3qUBpZz2gcdeQJw5qYA6B5BHglsl2pShJ"
+                        }
+                    ],
+                    "origin": 8,
+                    "created_at": "2021-11-27 18:18:35",
+                    "updated_at": "2021-11-27 18:18:35"
+                },
+                "is_commodity": false,
+                "market_name": "StatTrak™ M4A4 | Howl (Factory New)",
+                "market_value": 2368054,
+                "name": "StatTrak™ M4A4 | Howl (Factory New)",
+                "name_color": "CF6A32",
+                "paint_index": 309,
+                "paint_seed": 205,
+                "preview_id": "69161b71e1a2",
+                "price_is_unreliable": true,
+                "stickers": [
+                    {
+                        "slot": 3,
+                        "sticker_id": 3717,
+                        "wear": 0.7717340588569641,
+                        "scale": null,
+                        "rotation": null,
+                        "tint_id": null,
+                        "name": "yuurih | Katowice 2019",
+                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRWTVjfUO2u0p2DAgQ7Ng1QiaOwPhVp28zEcC9F6ZLnxILfk6ajN--Jwz0B7sQgjrrEotys31W3qUBpZz2gcdeQJw5qYA6B5BHglsl2pShJ"
+                    }
+                ],
+                "tradable": true,
+                "tradelock": false,
+                "updated_at": "2021-11-30 11:56:31",
+                "wear": 0.04,
+                "published_at": "2021-11-30T12:10:48.413542Z",
+                "id": 28276894
+            },
+            {
+                "app_id": 730,
+                "auction_auto_withdraw_failed": null,
+                "auction_ends_at": 1636542106,
+                "auction_highest_bid": null,
+                "auction_highest_bidder": null,
+                "auction_number_of_bids": 0,
+                "custom_name": null,
+                "custom_price_percentage": 21,
+                "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqOT1I6vZn3lU18hwmOvN8IXvjVCLqSwwOj6rYJiRdg42NAuE-lW5kri5hpbuvM7AzHtmsnMh4imPzUa3gB4aaOw9hfCeVxzAUJ5TOTzr",
+                "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqOT1I6vZn3lU18hwmOvN8IXvjVCLqSwwOj6rYJiRdg42NAuE-lW5kri5hpbuvM7AzHtmsnMh4imPzUa3gB4aaOw9hfCeVxzAUJ5TOTzr",
+                "inspect_details": {
+                    "defindex": 515,
+                    "paintindex": 619,
+                    "rarity": 6,
+                    "quality": 3,
+                    "paintwear": 0.01931234635412693,
+                    "paintseed": 921,
+                    "killeaterscoretype": null,
+                    "killeatervalue": null,
+                    "customname": null,
+                    "stickers": [],
+                    "origin": 8,
+                    "created_at": "2021-09-21 16:04:40",
+                    "updated_at": "2021-10-14 03:08:10"
+                },
+                "is_commodity": false,
+                "market_name": "★ Butterfly Knife | Doppler (Factory New) - Sapphire",
+                "market_value": 2154762,
+                "name": "★ Butterfly Knife | Doppler (Factory New) - Sapphire",
+                "name_color": "8650AC",
+                "paint_index": 619,
+                "paint_seed": 921,
+                "preview_id": "5ffcadd62470",
+                "price_is_unreliable": true,
+                "stickers": [],
+                "tradable": true,
+                "tradelock": false,
+                "updated_at": "2021-11-30 12:10:55",
+                "wear": 0.019,
+                "published_at": "2021-11-30T12:11:18.024068Z",
+                "id": 27596342
+            }
+        ],
+        "first_page_url": "http://csgoempire.com/api/api/trading/items?page=1",
+        "from": 1,
+        "last_page": 5027,
+        "last_page_url": "http://csgoempire.com/api/api/trading/items?page=5027",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=3",
+                "label": "3",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=4",
+                "label": "4",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=5",
+                "label": "5",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=6",
+                "label": "6",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=7",
+                "label": "7",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=8",
+                "label": "8",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=9",
+                "label": "9",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=10",
+                "label": "10",
+                "active": false
+            },
+            {
+                "url": null,
+                "label": "...",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=5026",
+                "label": "5026",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=5027",
+                "label": "5027",
+                "active": false
+            },
+            {
+                "url": "http://csgoempire.com/api/api/trading/items?page=2",
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": "http://csgoempire.com/api/api/trading/items?page=2",
+        "path": "http://csgoempire.com/api/api/trading/items",
+        "per_page": "3",
+        "prev_page_url": null,
+        "to": 3,
+        "total": 15079
+    }
   ```
 
   ## Get Depositor Stats
-  URL: 
+  URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/stats
+  Method: GET
 
-  Description goes here
+  Get the depositing users stats from a unique deposit ID
 
   Inputs:
-  ```json
-  
-  ```
+  - deposit_id: number
 
   Example Request
   ```bash
-  
+    curl --location --request GET 'https://csgoempire.com/api/v2/trading/deposit/28079776/stats' \
+    --header 'Authorization: Bearer {API-KEY-HERE}
   ```
 
   Example Response:
   ```json
-
+    {
+        "delivery_rate_recent": 1,
+        "delivery_rate_long": 1,
+        "delivery_time_minutes_recent": null,
+        "delivery_time_minutes_long": null,
+        "steam_level_min_range": 100,
+        "steam_level_max_range": 5000,
+        "user_has_trade_notifications_enabled": false,
+        "user_is_online": null
+    }
   ```
 
   ## Get Security Token
   URL: 
+  Method:
 
   Description goes here
 
@@ -824,6 +1199,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Create Withdrawal
   URL: 
+  Method:
 
   Description goes here
 
@@ -844,6 +1220,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Place Bid
   URL: 
+  Method:
 
   Description goes here
 
