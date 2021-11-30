@@ -43,6 +43,8 @@ All requests are included in bash form. You can use a program like [Postman](htt
 
 Any code provided is as an example, you should write your own if you wish to do more than the most basic tasks.
 
+Any input marked '(required)' is required for the request to work, anything without that is optional.
+
 # API Keys
 Coming soon:tm:
 
@@ -352,8 +354,8 @@ Method: POST
 Used to update your tradelink and/or Steam API key
 
 Inputs:
-- trade_url: (required) string
-- steam_api_key : string
+- trade_url (required): string, your steam trade url
+- steam_api_key : string, your steam api key
 
 
 Example request:
@@ -404,7 +406,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Fetch your inventory from steam and caches it to the database for 1 hour.
 
   Inputs:
-  - invalid (optional) : yes|no - Filters invalid items, defaults to no filtering
+  - invalid : yes|no - Filters invalid items, defaults to no filtering
 
   Example Request
   ```bash
