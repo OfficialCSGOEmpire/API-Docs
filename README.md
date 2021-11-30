@@ -57,16 +57,14 @@ URL: https://csgoempire.com/api/v2/metadata/socket
 
 Returns the user object, which is used to identify via websocket, as well as socket token (authorizationToken) & socket signature (signature) which are used to authenticate on websocket.
 
-<details>
-<summary>Example request:</summary>
-<p>
+
+Example request:
 ```bash
 curl --location --request GET 'https://csgoempire.com/api/v2/metadata/socket' \
 --header 'Authorization: Bearer {API-KEY-HERE}
 
 ```
-</p>
-</details>
+
 Response:
 ```json
 {
