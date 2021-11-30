@@ -645,63 +645,118 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   ```
 
   ## Create Deposit
-  URL: 
+  URL: https://csgoempire.com/api/v2/trading/deposit
 
   Description goes here
 
   Inputs:
+  - Items: (required) array with array elements: [id: itemId, custom_price: int, coin_value: int]
+
+  Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001 
+
+  Example Input:
   ```json
-  
+    {
+        "items": [
+            {
+                "id": 3731677704,
+                "custom_price_percentage": 32,
+                "coin_value": 576811
+            }
+        ]
+    }
   ```
 
   Example Request
   ```bash
-  
+    curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit' \
+    --header 'Authorization: Bearer {API-KEY-HERE}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{"items":[{"id":3731677704,"custom_price_percentage":32,"coin_value":576811}]}'
   ```
 
   Example Response:
   ```json
-
+    {
+        "success": true,
+        "deposits": {
+            "success": true,
+            "id": "28391470",
+            "item_id": 3731677704,
+            "invoice": {
+                "user_id": 303119,
+                "ip_address": "0.0.0.0",
+                "status": 200,
+                "processor_id": 3,
+                "currency_id": 4,
+                "amount": 761391,
+                "amount_coins": 761391,
+                "metadata": {
+                    "item_id": 3731677704,
+                    "custom_price_percentage": 32
+                },
+                "updated_at": 1638271689,
+                "created_at": 1638271688,
+                "id": 3885971,
+                "processor_ref": "28391470",
+                "processor_name": "Steam",
+                "provider_friendly_name": "Steam (P2P)",
+                "method_friendly_name": null,
+                "status_name": "CREATED",
+                "currency_code": "STEAM_ITEMS",
+                "paid_at": null,
+                "refunded_at": null
+            }
+        }
+    }
   ```
 
   ## Cancel Deposit
-  URL: 
+  URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT-ID}/cancel
 
-  Description goes here
-
-  Inputs:
-  ```json
-  
-  ```
+  Cancels processing deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
 
   Example Request
   ```bash
-  
+    curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28391470/cancel' \
+    --header 'Authorization: Bearer {API-KEY-HERE}' 
   ```
 
   Example Response:
   ```json
-
+    {
+        "success": true
+    }
   ```
 
   ## Sell Now
-  URL: 
+  URL:  https://csgoempire.com/api/v2//trading/deposit/{deposit_id}/sell
 
   Description goes here
 
   Inputs:
-  ```json
-  
-  ```
+  - deposit_id (required) : Int - Required in the URL
+
 
   Example Request
   ```bash
-  
+  curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28393316/sell' \
+  --header 'Authorization: Bearer {API-KEY-HERE}
   ```
 
   Example Response:
   ```json
-
+    {
+        "success": true,
+        "auction_data": {
+            "id": 28393316,
+            "app_id": 730,
+            "auction_highest_bid": 54,
+            "auction_highest_bidder": 2700170,
+            "auction_number_of_bids": 2,
+            "auction_ends_at": 1638273900
+        }
+    }
   ```
 ----------------------------------
 
