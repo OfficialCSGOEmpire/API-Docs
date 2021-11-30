@@ -58,14 +58,13 @@ URL: https://csgoempire.com/api/v2/metadata/socket
 Returns the user object, which is used to identify via websocket, as well as socket token (authorizationToken) & socket signature (signature) which are used to authenticate on websocket.
 
 Example request:
-```bash
+<details>```bash
 curl --location --request GET 'https://csgoempire.com/api/v2/metadata/socket' \
 --header 'Authorization: Bearer {API-KEY-HERE}
 
-```
-
+```</details>
 Response:
-```json
+<details>```json
 {
     "user": {
         "id": 303119,
@@ -231,22 +230,20 @@ Response:
     "socket_signature": ""
 }
 
-```
-
+```</details>
 # Get Active Trades
 URL: https://csgoempire.com/api/v2/trading/user/trades
 
 Returns an array of all items currently being deposited or withdrawn by this account. This does not include bids placed on active items until the auction ends.
 
 Example request:
-```bash
+<details>```bash
 curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/trades' \
 --header 'Authorization: Bearer {API-KEY-HERE}'
 
-```
-
+```</details>
 Example response:
-```json
+<details>```json
 {
     "data": {
         "deposits": [
@@ -317,22 +314,20 @@ Example response:
         "withdrawals": []
     }
 }
-```
-
+```</details>
 # Get Active Auctions
 URL: https://csgoempire.com/api/v2/trading/user/auctions
 
 Returns an array of all auctions currently being bid on by this account.
 
 Example request:
-```bash
+<details>```bash
 curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/auctions' \
 --header 'Authorization: Bearer {API-KEY-HERE}'
 
-```
-
+```</details>
 Example response:
-```json
+<details>```json
 {
     "success": true,
     "active_auctions": [
@@ -407,8 +402,7 @@ Example response:
         }
     ]
 }
-```
-
+```</details>
 # Settings
 URL: https://csgoempire.com/api/v2/trading/user/settings
 Method: POST
@@ -421,21 +415,19 @@ Inputs:
 
 
 Example request:
-```bash
+<details>```bash
 curl --location --request POST 'https://csgoempire.com/api/v2/trading/user/settings' \
 --header 'Authorization: Bearer {API-KEY-HERE}' \
 --header 'Content-Type: application/json' \
 --data-raw '{"trade_url":"https://steamcommunity.com/tradeoffer/new/?partner=145926386&token=zYMYgbXB"}'
-```
-
+```</details>
 Example response:
-```json
+<details>```json
 {
     "success": true,
     "escrow_seconds": 0
 }
-```
-
+```</details>
 # Trade Status Enums
 Below are a list of trade statuses. Trade endpoints will return status enums.
 
@@ -467,13 +459,12 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   - invalid (optional) : yes|no - Filters invalid items, defaults to no filtering
 
   Example Request
-  ```bash
+  <details>```bash
   curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/inventory' \
   --header 'Authorization: Bearer {API-KEY-HERE}'
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
   {
     "success": true,
     "updatedAt": 1638265100,
@@ -593,8 +584,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
         }
     ]
 }
-  ```
-
+  ```</details>
   ## Get Unique Info
   URL: https://csgoempire.com/api/v2/trading/user/inventory/unique-info
   Method: GET
@@ -602,13 +592,12 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Get inspected unique info for items in user inventory. Examples include float/sticker data
 
   Example Request
-  ```bash
+  <details>```bash
     curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/inventory/unique-info' \
     --header 'Authorization: Bearer {API-KEY-HERE}'
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
 {
     "success": true,
     "data": [
@@ -672,8 +661,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             "stickers": []
         }
 }
-  ```
-
+  ```</details>
   ## Create Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit
   Method: POST
@@ -686,7 +674,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001 
 
   Example Input:
-  ```json
+  <details>```json
     {
         "items": [
             {
@@ -696,18 +684,16 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             }
         ]
     }
-  ```
-
+  ```</details>
   Example Request
-  ```bash
+  <details>```bash
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit' \
     --header 'Authorization: Bearer {API-KEY-HERE}' \
     --header 'Content-Type: application/json' \
     --data-raw '{"items":[{"id":3731677704,"custom_price_percentage":32,"coin_value":576811}]}'
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
     {
         "success": true,
         "deposits": {
@@ -740,8 +726,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             }
         }
     }
-  ```
-
+  ```</details>
   ## Cancel Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT-ID}/cancel
   Method: POST
@@ -749,18 +734,16 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Cancels processing deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
 
   Example Request
-  ```bash
+  <details>```bash
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28391470/cancel' \
     --header 'Authorization: Bearer {API-KEY-HERE}' 
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
     {
         "success": true
     }
-  ```
-
+  ```</details>
   ## Sell Now
   URL:  https://csgoempire.com/api/v2//trading/deposit/{deposit_id}/sell
   Method: POST
@@ -772,13 +755,12 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
 
   Example Request
-  ```bash
+  <details>```bash
   curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28393316/sell' \
   --header 'Authorization: Bearer {API-KEY-HERE}
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
     {
         "success": true,
         "auction_data": {
@@ -790,8 +772,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             "auction_ends_at": 1638273900
         }
     }
-  ```
-----------------------------------
+  ```</details>----------------------------------
 
 # Withdraw
 
@@ -813,13 +794,12 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   - price_max_above - number. Maximum item percentage to show.
 
   Example Request
-  ```bash
+  <details>```bash
   curl --location --request GET 'https://csgoempire.com/api/v2/trading/items?per_page=10&page=1&price_max_above=15&sort=desc&order=market_value' \
   --header 'Authorization: Bearer {API-KEY-HERE}
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
     {
         "current_page": 1,
         "data": [
@@ -1145,8 +1125,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
         "to": 3,
         "total": 15079
     }
-  ```
-
+  ```</details>
   ## Get Depositor Stats
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/stats
   Method: GET
@@ -1157,13 +1136,12 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   - deposit_id: number
 
   Example Request
-  ```bash
+  <details>```bash
     curl --location --request GET 'https://csgoempire.com/api/v2/trading/deposit/28079776/stats' \
     --header 'Authorization: Bearer {API-KEY-HERE}
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
     {
         "delivery_rate_recent": 1,
         "delivery_rate_long": 1,
@@ -1174,8 +1152,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
         "user_has_trade_notifications_enabled": false,
         "user_is_online": null
     }
-  ```
-
+  ```</details>
   ## Get Security Token
   URL: 
   Method:
@@ -1183,20 +1160,17 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Description goes here
 
   Inputs:
-  ```json
+  <details>```json
   
-  ```
-
+  ```</details>
   Example Request
-  ```bash
+  <details>```bash
   
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
 
-  ```
-
+  ```</details>
   ## Create Withdrawal
   URL: 
   Method:
@@ -1204,20 +1178,17 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Description goes here
 
   Inputs:
-  ```json
+  <details>```json
   
-  ```
-
+  ```</details>
   Example Request
-  ```bash
+  <details>```bash
   
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
 
-  ```
-
+  ```</details>
   ## Place Bid
   URL: 
   Method:
@@ -1225,20 +1196,17 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Description goes here
 
   Inputs:
-  ```json
+  <details>```json
   
-  ```
-
+  ```</details>
   Example Request
-  ```bash
+  <details>```bash
   
-  ```
-
+  ```</details>
   Example Response:
-  ```json
+  <details>```json
 
-  ```
-
+  ```</details>
 ----------------------------------
 
 # Websocket
@@ -1252,7 +1220,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Websocket Authentication
   The socket can be used as unauthenticated but if you want to receive trade updates you need to auth. To authenticate you need to emit identify event with the data:
-  ```json
+  <details>```json
   {
     "uid": <userid>,
     "model": { ...user_model },
@@ -1260,12 +1228,11 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     "signature": <token_signature>,
     "uuid": <optional_device_identifier>
   }
-  ```
-
+  ```</details>
   See [metadata](#metadata) on how to get the required socket auth data.
 
   This returns the following:
-  ```json
+  <details>```json
 42/trade,
 [
    "init",
@@ -1323,8 +1290,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
       "name":"Artemis"
    }
 ]
-  ```
-
+  ```</details>
 
 
   ## Websocket Events
@@ -1332,15 +1298,13 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Syncing server timestamp. It is not emitted unless the client asks it by sending timesync event.
 
   Event sample:
-  ```
-  42/trade,["timesync",1619682261540]
-  ```
-
+  ```</details>  42/trade,["timesync",1619682261540]
+  ```</details>
   ### `new_item`
   Emitted when a new item is available.
   
   Event sample:
-  ```json
+  <details>```json
 42 / trade, ["new_item", {
     "app_id": 730,
     "auction_auto_withdraw_failed": null,
@@ -1370,13 +1334,12 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     "id": 10003,
 }]
 
-  ```
-
+  ```</details>
   ### `updated_item`
   Emitted when an existing item has been updated. For example, if status changes.
   
   Event sample:
-  ```json
+  <details>```json
 42 / trade, ["updated_item", {
     "app_id": 730,
     "auction_auto_withdraw_failed": null,
@@ -1406,13 +1369,12 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     "id": 10003,
 }]
 
-  ```
-
+  ```</details>
   ### `auction_update`
   Emitted when someone places a bid for an auction item.
 
   Event sample:
-  ```json
+  <details>```json
 42 / trade, ["updated_item", {
     "app_id": 730,
     "auction_auto_withdraw_failed": null,
@@ -1442,21 +1404,19 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     "id": 10003,
 }]
 
-  ```
-
+  ```</details>
   ### `deleted_item`
   Emitted when the item is not anymore available for withdrawing. Eg. the auction ends and the winner withdraws it. Contains an array of ids. Currently always just one id but may be more in future.
   
   Event sample:
-  ```json
+  <details>```json
 42/trade,["deleted_item",[10003]]
-  ```
-
+  ```</details>
   ### `trade_status`
   Emitted when the trade status gets updated.
   
   Event sample:
-  ```json
+  <details>```json
 42 / trade, ["trade_status", {
     "type": "deposit",
     "data": {
@@ -1521,5 +1481,4 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     }
 }]
 
-  ```
-
+  ```</details>
