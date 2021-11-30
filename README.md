@@ -605,6 +605,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 }
   ```
 
+[[Back to contents](#contents)]
+
   ## Get Unique Info
   URL: https://csgoempire.com/api/v2/trading/user/inventory/unique-info
   Method: GET
@@ -685,6 +687,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 }
   ```
 
+[[Back to contents](#contents)]
+
   ## Create Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit
   Method: POST
@@ -753,6 +757,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     }
   ```
 
+[[Back to contents](#contents)]
+
   ## Cancel Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT-ID}/cancel
   Method: POST
@@ -802,6 +808,9 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
         }
     }
   ```
+
+[[Back to contents](#contents)]
+
 ----------------------------------
 
 # Withdraw
@@ -1158,6 +1167,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     }
   ```
 
+  [[Back to contents](#contents)]
+
   ## Get Depositor Stats
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/stats
   Method: GET
@@ -1187,6 +1198,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     }
   ```
 
+  [[Back to contents](#contents)]
+
   ## Get Security Token
   URL: 
   Method:
@@ -1207,6 +1220,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   ```json
 
   ```
+
+  [[Back to contents](#contents)]
 
   ## Create Withdrawal
   URL: 
@@ -1229,6 +1244,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ```
 
+  [[Back to contents](#contents)]
+
   ## Place Bid
   URL: 
   Method:
@@ -1250,6 +1267,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ```
 
+  [[Back to contents](#contents)]
+
 ----------------------------------
 
 # Websocket
@@ -1260,6 +1279,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   Example code for connecting to the websocket can be found [here](https://github.com/OfficialCSGOEmpire/API-Docs/blob/main/examples/websocket-connection.js)
 
+[[Back to contents](#contents)]
 
   ## Websocket Authentication
   The socket can be used as unauthenticated but if you want to receive trade updates you need to auth. To authenticate you need to emit identify event with the data:
@@ -1336,7 +1356,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 ]
   ```
 
-
+[[Back to contents](#contents)]
 
   ## Websocket Events
   ### `timesync`
@@ -1346,6 +1366,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   ```
   42/trade,["timesync",1619682261540]
   ```
+
+  [[Back to contents](#contents)]
 
   ### `new_item`
   Emitted when a new item is available.
@@ -1383,6 +1405,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ```
 
+[[Back to contents](#contents)]
+
   ### `updated_item`
   Emitted when an existing item has been updated. For example, if status changes.
   
@@ -1418,6 +1442,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 }]
 
   ```
+
+[[Back to contents](#contents)]
 
   ### `auction_update`
   Emitted when someone places a bid for an auction item.
@@ -1455,6 +1481,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ```
 
+[[Back to contents](#contents)]
+
   ### `deleted_item`
   Emitted when the item is not anymore available for withdrawing. Eg. the auction ends and the winner withdraws it. Contains an array of ids. Currently always just one id but may be more in future.
   
@@ -1462,6 +1490,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   ```json
 42/trade,["deleted_item",[10003]]
   ```
+
+[[Back to contents](#contents)]
 
   ### `trade_status`
   Emitted when the trade status gets updated.
@@ -1534,3 +1564,4 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ```
 
+[[Back to contents](#contents)]
