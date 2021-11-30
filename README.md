@@ -50,7 +50,7 @@ Coming soon:tm:
 # Rate Limits
 Rate limits limit the number of requests you can make per second from one IP. Currently there is a global request limit (to any endpoint) of 120 requests per 10 seconds. If you exceed a ratelimit you'll be unable to access any endpoints for 60 seconds. This will return a response with a status code of 429.
 
-
+[[Back to contents](#contents)]
 
 # Metadata
 URL: https://csgoempire.com/api/v2/metadata/socket
@@ -234,6 +234,8 @@ Response:
 
 ```
 
+[[Back to contents](#contents)]
+
 # Get Active Trades
 URL: https://csgoempire.com/api/v2/trading/user/trades
 
@@ -319,6 +321,8 @@ Example response:
     }
 }
 ```
+
+[[Back to contents](#contents)]
 
 # Get Active Auctions
 URL: https://csgoempire.com/api/v2/trading/user/auctions
@@ -410,6 +414,8 @@ Example response:
 }
 ```
 
+[[Back to contents](#contents)]
+
 # Settings
 URL: https://csgoempire.com/api/v2/trading/user/settings
 Method: POST
@@ -437,6 +443,8 @@ Example response:
 }
 ```
 
+[[Back to contents](#contents)]
+
 # Trade Status Enums
 Below are a list of trade statuses. Trade endpoints will return status enums.
 
@@ -453,6 +461,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
  - TimedOut = 9;
  - Credited = 10;
 
+[[Back to contents](#contents)]
 
 ----------------------------------
 
