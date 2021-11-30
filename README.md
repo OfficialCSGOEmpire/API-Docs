@@ -54,6 +54,7 @@ Rate limits limit the number of requests you can make per second from one IP. Cu
 
 # Metadata
 URL: https://csgoempire.com/api/v2/metadata/socket
+Method: GET
 
 Returns the user object, which is used to identify via websocket, as well as socket token (authorizationToken) & socket signature (signature) which are used to authenticate on websocket.
 
@@ -238,6 +239,7 @@ Response:
 
 # Get Active Trades
 URL: https://csgoempire.com/api/v2/trading/user/trades
+Method: GET
 
 Returns an array of all items currently being deposited or withdrawn by this account. This does not include bids placed on active items until the auction ends.
 
@@ -326,6 +328,7 @@ Example response:
 
 # Get Active Auctions
 URL: https://csgoempire.com/api/v2/trading/user/auctions
+Method: GET
 
 Returns an array of all auctions currently being bid on by this account.
 
@@ -1363,7 +1366,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   Syncing server timestamp. It is not emitted unless the client asks it by sending timesync event.
 
   Event sample:
-  ```
+  ```json
   42/trade,["timesync",1619682261540]
   ```
 
