@@ -54,6 +54,7 @@ Rate limits limit the number of requests you can make per second from one IP. Cu
 
 # Metadata
 URL: https://csgoempire.com/api/v2/metadata/socket
+
 Method: GET
 
 Returns the user object, which is used to identify via websocket, as well as socket token (authorizationToken) & socket signature (signature) which are used to authenticate on websocket.
@@ -239,6 +240,7 @@ Response:
 
 # Get Active Trades
 URL: https://csgoempire.com/api/v2/trading/user/trades
+
 Method: GET
 
 Returns an array of all items currently being deposited or withdrawn by this account. This does not include bids placed on active items until the auction ends.
@@ -328,6 +330,7 @@ Example response:
 
 # Get Active Auctions
 URL: https://csgoempire.com/api/v2/trading/user/auctions
+
 Method: GET
 
 Returns an array of all auctions currently being bid on by this account.
@@ -421,6 +424,7 @@ Example response:
 
 # Settings
 URL: https://csgoempire.com/api/v2/trading/user/settings
+
 Method: POST
 
 Used to update your tradelink and/or Steam API key
@@ -472,7 +476,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Get CSGO Inventory
   URL: https://csgoempire.com/api/v2/trading/user/inventory
-  Method: GET
+  
+Method: GET
 
   Fetch your inventory from steam and caches it to the database for 1 hour.
 
@@ -612,7 +617,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Get Unique Info
   URL: https://csgoempire.com/api/v2/trading/user/inventory/unique-info
-  Method: GET
+  
+Method: GET
 
   Get inspected unique info for items in user inventory. Examples include float/sticker data
 
@@ -694,7 +700,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Create Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit
-  Method: POST
+  
+Method: POST
 
   Description goes here
 
@@ -750,7 +757,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
                 "processor_ref": "28391470",
                 "processor_name": "Steam",
                 "provider_friendly_name": "Steam (P2P)",
-                "method_friendly_name": null,
+                "
+Method_friendly_name": null,
                 "status_name": "CREATED",
                 "currency_code": "STEAM_ITEMS",
                 "paid_at": null,
@@ -764,7 +772,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Cancel Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT-ID}/cancel
-  Method: POST
+  
+Method: POST
 
   Cancels processing deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
 
@@ -783,7 +792,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Sell Now
   URL:  https://csgoempire.com/api/v2//trading/deposit/{deposit_id}/sell
-  Method: POST
+  
+Method: POST
 
   Description goes here
 
@@ -820,7 +830,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Get Listed Items
   URL: https://csgoempire.com/api/v2/trading/items
-  Method: GET
+  
+Method: GET
 
   Get a list of all items listed on the withdrawals page
 
@@ -1174,7 +1185,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Get Depositor Stats
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/stats
-  Method: GET
+  
+Method: GET
 
   Get the depositing users stats from a unique deposit ID
 
@@ -1205,7 +1217,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Get Security Token
   URL: 
-  Method:
+  
+Method:
 
   Description goes here
 
@@ -1228,7 +1241,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Create Withdrawal
   URL: 
-  Method:
+  
+Method:
 
   Description goes here
 
@@ -1251,7 +1265,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 
   ## Place Bid
   URL: 
-  Method:
+  
+Method:
 
   Description goes here
 
