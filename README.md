@@ -22,7 +22,6 @@ CSGOEmpire API Key Documentation
   - [Withdraw](#withdraw):
     - [Items](#get-listed-items)
     - [Stats](#get-depositor-stats)
-    - [Security Token](#get-security-token)
     - [Withdraw Item](#create-withdrawal)
     - [Bid](#place-bid)
 - [Websocket](#websocket):
@@ -63,7 +62,7 @@ Returns the user object, which is used to identify via websocket, as well as soc
 Example request:
 ```bash
 curl --location --request GET 'https://csgoempire.com/api/v2/metadata/socket' \
---header 'Authorization: Bearer {API-KEY-HERE}
+--header 'Authorization: Bearer {API-KEY-HERE}'
 
 ```
 
@@ -119,74 +118,14 @@ Response:
         "withdrawal_fee_owed": "0.0000",
         "flags": 0,
         "ban": null,
-        "balances": [
-            {
-                "id": 47,
-                "user_id": 303119,
-                "balance_type": 1,
-                "balance": "0",
-                "created_at": "2021-11-23T20:40:25.000000Z",
-                "updated_at": "2021-11-30T08:06:19.000000Z"
-            }
-        ],
+        "balances": [],
         "level": 0,
         "xp": 0,
         "socket_token": "",
         "user_hash": "",
         "hashed_server_seed": "",
         "intercom_hash": "",
-        "roles": [
-            {
-                "id": 3,
-                "name": "super-mod",
-                "display_name": "Super Mod",
-                "description": "Super Mod",
-                "created_at": null,
-                "updated_at": "2018-05-09T18:54:41.000000Z",
-                "level": 1,
-                "max_win_customer_modifier": null
-            },
-            {
-                "id": 8,
-                "name": "support-manager",
-                "display_name": "Support Manager",
-                "description": "Support Manager",
-                "created_at": "2018-01-08T02:39:55.000000Z",
-                "updated_at": "2018-01-08T02:39:55.000000Z",
-                "level": 0,
-                "max_win_customer_modifier": null
-            },
-            {
-                "id": 13,
-                "name": "matchbetting-beta",
-                "display_name": "Matchbetting Beta",
-                "description": "Gives access to match-betting mode",
-                "created_at": "2019-07-29T20:50:32.000000Z",
-                "updated_at": "2019-07-29T20:50:32.000000Z",
-                "level": 0,
-                "max_win_customer_modifier": null
-            },
-            {
-                "id": 14,
-                "name": "supershootout-beta",
-                "display_name": "Supershootout Beta",
-                "description": "Gives access to supershootout mode",
-                "created_at": "2019-07-29T20:50:47.000000Z",
-                "updated_at": "2019-07-29T20:50:47.000000Z",
-                "level": 0,
-                "max_win_customer_modifier": null
-            },
-            {
-                "id": 4,
-                "name": "mod",
-                "display_name": "Mod",
-                "description": "Mod",
-                "created_at": null,
-                "updated_at": "2020-08-19T19:12:47.000000Z",
-                "level": 1,
-                "max_win_customer_modifier": null
-            }
-        ],
+        "roles": [],
         "eligible_for_free_case": false,
         "extra_security_type": "2fa",
         "total_bet_skincrash": 0,
@@ -199,19 +138,7 @@ Response:
         "verified": false,
         "hide_verified_icon": false,
         "unread_notifications": [],
-        "last_session": {
-            "id": 46508019,
-            "user_id": 303119,
-            "ip": "0.0.0.0",
-            "expired": true,
-            "created_at": "2021-11-22 22:46:15",
-            "updated_at": "2021-11-29 13:02:46",
-            "device_identifier": "",
-            "user_agent": "",
-            "hash": "",
-            "city": "",
-            "country": ""
-        },
+        "last_session": {},
         "email": "",
         "email_verified": false,
         "eth_deposit_address": "",
@@ -221,12 +148,7 @@ Response:
         "steam_inventory_url": "https://steamcommunity.com/profiles/76561198106192114/inventory/#730",
         "steam_api_key": "",
         "has_crypto_deposit": true,
-        "chat_tag": {
-            "text": "Support",
-            "localized_text": null,
-            "color": "ff91a4",
-            "hide_rank": true
-        },
+        "chat_tag": {},
         "linked_accounts": [],
         "api_token": "nice try"
     },
@@ -477,7 +399,7 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
   ## Get CSGO Inventory
   URL: https://csgoempire.com/api/v2/trading/user/inventory
   
-Method: GET
+  Method: GET
 
   Fetch your inventory from steam and caches it to the database for 1 hour.
 
@@ -618,7 +540,7 @@ Method: GET
   ## Get Unique Info
   URL: https://csgoempire.com/api/v2/trading/user/inventory/unique-info
   
-Method: GET
+  Method: GET
 
   Get inspected unique info for items in user inventory. Examples include float/sticker data
 
@@ -701,7 +623,7 @@ Method: GET
   ## Create Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit
   
-Method: POST
+  Method: POST
 
   Description goes here
 
@@ -757,8 +679,7 @@ Method: POST
                 "processor_ref": "28391470",
                 "processor_name": "Steam",
                 "provider_friendly_name": "Steam (P2P)",
-                "
-Method_friendly_name": null,
+                "Method_friendly_name": null,
                 "status_name": "CREATED",
                 "currency_code": "STEAM_ITEMS",
                 "paid_at": null,
@@ -773,7 +694,7 @@ Method_friendly_name": null,
   ## Cancel Deposit
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT-ID}/cancel
   
-Method: POST
+  Method: POST
 
   Cancels processing deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
 
@@ -793,18 +714,18 @@ Method: POST
   ## Sell Now
   URL:  https://csgoempire.com/api/v2//trading/deposit/{deposit_id}/sell
   
-Method: POST
+  Method: POST
 
   Description goes here
 
   Inputs:
-  - deposit_id (required) : Int - Required in the URL
+  - deposit_id (required) : integer - Required in the URL
 
 
   Example Request
   ```bash
   curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28393316/sell' \
-  --header 'Authorization: Bearer {API-KEY-HERE}
+  --header 'Authorization: Bearer {API-KEY-HERE}'
   ```
 
   Example Response:
@@ -831,7 +752,7 @@ Method: POST
   ## Get Listed Items
   URL: https://csgoempire.com/api/v2/trading/items
   
-Method: GET
+  Method: GET
 
   Get a list of all items listed on the withdrawals page
 
@@ -849,7 +770,7 @@ Method: GET
   Example Request
   ```bash
   curl --location --request GET 'https://csgoempire.com/api/v2/trading/items?per_page=10&page=1&price_max_above=15&sort=desc&order=market_value' \
-  --header 'Authorization: Bearer {API-KEY-HERE}
+  --header 'Authorization: Bearer {API-KEY-HERE}'
   ```
 
   Example Response:
@@ -1186,17 +1107,17 @@ Method: GET
   ## Get Depositor Stats
   URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/stats
   
-Method: GET
+  Method: GET
 
   Get the depositing users stats from a unique deposit ID
 
   Inputs:
-  - deposit_id: number
+  - deposit_id (required) : integer - Required in the URL
 
   Example Request
   ```bash
     curl --location --request GET 'https://csgoempire.com/api/v2/trading/deposit/28079776/stats' \
-    --header 'Authorization: Bearer {API-KEY-HERE}
+    --header 'Authorization: Bearer {API-KEY-HERE}'
   ```
 
   Example Response:
@@ -1215,74 +1136,215 @@ Method: GET
 
   [[Back to contents](#contents)]
 
-  ## Get Security Token
-  URL: 
-  
-Method:
-
-  Description goes here
-
-  Inputs:
-  ```json
-  
-  ```
-
-  Example Request
-  ```bash
-  
-  ```
-
-  Example Response:
-  ```json
-
-  ```
-
-  [[Back to contents](#contents)]
-
   ## Create Withdrawal
-  URL: 
+  URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/withdraw
   
-Method:
+  Method: POST
 
-  Description goes here
+  Withdraw item directly if the auction has expired without being won.
 
   Inputs:
-  ```json
-  
-  ```
+  - deposit_id (required) : integer - Required in the URL
 
   Example Request
   ```bash
-  
+    curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28387732/withdraw' \
+    --header 'Authorization: Bearer {API-KEY-HERE}'
   ```
 
   Example Response:
   ```json
-
+    {
+        "success": true,
+        "data": {
+            "id": 13745535,
+            "user_id": 303119,
+            "item_id": null,
+            "items": [
+                {
+                    "app_id": 730,
+                    "created_at": 1638267229,
+                    "custom_price_percentage": null,
+                    "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEPTTOz_h52CHFp7ITtRubOpZVZh1vGbJW0Xuoq3zdiKxfKsNunVxj1TsMEk3LmS9930jQPnqEI6NW3tZNjC2hpzSfU",
+                    "id": 28387732,
+                    "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEPTTOz_h52CHFp7ITtRubOpZVZh1vGbJW0Xuoq3zdiKxfKsNunVxj1TsMEk3LmS9930jQPnqEI6NW3tZNjC2hpzSfU",
+                    "is_commodity": true,
+                    "market_name": "Sticker | GODSENT (Foil) | Stockholm 2021",
+                    "market_value": 0.41,
+                    "name": "Sticker | GODSENT (Foil) | Stockholm 2021",
+                    "name_color": "D2D2D2",
+                    "paint_index": null,
+                    "preview_id": null,
+                    "price_is_unreliable": false,
+                    "tradable": true,
+                    "tradelock": false,
+                    "type": "Exotic Sticker",
+                    "updated_at": "2021-11-30 13:41:36",
+                    "wear": null
+                }
+            ],
+            "total_value": 41,
+            "security_code": "",
+            "tradeoffer_id": 28387732,
+            "trade_id": 2,
+            "status": 4,
+            "status_message": "Confirming",
+            "metadata": {
+                "auction_highest_bid": null,
+                "auction_highest_bidder": null,
+                "auction_number_of_bids": 0,
+                "auction_ends_at": 1638267409,
+                "auction_auto_withdraw_failed": null,
+                "price_updated_at": null,
+                "trade_url": null,
+                "partner": null,
+                "total_fee": null,
+                "fee": null,
+                "old_total_value": null,
+                "item_position_in_inventory": 2,
+                "item_inspected": false,
+                "steam_id": "76561198106192114",
+                "expires_at": null,
+                "delivery_time": null,
+                "phishingScamDetected": null,
+                "item_validation": null,
+                "possible_abuse_detected_at": null,
+                "penalty": null,
+                "service_name": "csgoempire",
+                "service_invoice_id": 3881481
+            },
+            "created_at": "2021-11-30 13:46:29",
+            "updated_at": "2021-11-30 13:46:29"
+        },
+        "invoice": {
+            "user_id": 303119,
+            "status": 201,
+            "processor_id": 1,
+            "currency_id": 1,
+            "amount_coins": 41,
+            "metadata": {
+                "deposit_id": 28387732
+            },
+            "ip": "0.0.0.0",
+            "updated_at": "2021-11-30 13:46:29",
+            "created_at": "2021-11-30 13:46:27",
+            "id": 5191251,
+            "processor_txid": "13745535",
+            "user": {
+                "id": 303119,
+                "steam_id": "76561198106192114",
+                "steam_id_v3": "145926386",
+                "steam_name": "Artemis",
+                "avatar": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4f/4f619bc788f0d41261d2a5ced0e96a281af88479_full.jpg",
+                "profile_url": "https://steamcommunity.com/id/G0FastMen/",
+                "registration_timestamp": "2016-07-27 23:20:03",
+                "registration_ip": "0.0.0.0",
+                "last_login": "2021-11-29 13:02:54",
+                "balance": 0,
+                "total_profit": 0,
+                "total_bet": 0,
+                "betback_total": 0,
+                "bet_threshold": 0,
+                "total_trades": 0,
+                "total_deposit": 0,
+                "total_withdraw": 0,
+                "withdraw_limit": 0,
+                "csgo_playtime": 0,
+                "last_csgo_playtime_cache": "2016-07-27 23:20:03",
+                "trade_url": "https://steamcommunity.com/tradeoffer/new/?partner=145926386&token=ABCDEF",
+                "trade_offer_token": "ABCDEF",
+                "ref_id": 0,
+                "total_referral_bet": 1,
+                "total_referral_commission": 1,
+                "ref_permission": 1,
+                "ref_earnings": 0,
+                "total_ref_earnings": 1,
+                "total_ref_count": 0,
+                "total_credit": 1,
+                "referral_code": null,
+                "referral_amount": 50,
+                "muted_until": 1632354690,
+                "mute_reason": "Other",
+                "admin": 0,
+                "super_mod": 0,
+                "mod": 0,
+                "utm_campaign": "",
+                "country": "",
+                "is_vac_banned": 2,
+                "steam_level": 343,
+                "last_steam_level_cache": "2021-11-30T13:46:29.814674Z",
+                "whitelisted": 1,
+                "total_tips_received": 0,
+                "total_tips_sent": 0,
+                "withdrawal_fee_owed": "0.0000",
+                "flags": 704,
+                "encrypted_fields": [],
+                "balances": [],
+                "kyc": [],
+                "steam_data": {
+                    "user_id": 303119,
+                    "timecreated": 1378522915
+                }
+            },
+            "status_name": "Processing",
+            "processor_name": "Steam P2P"
+        }
+    }
   ```
 
   [[Back to contents](#contents)]
 
   ## Place Bid
-  URL: 
+  URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/bid
   
-Method:
+  Method:
 
-  Description goes here
+  Place a bid on an auction.
 
   Inputs:
-  ```json
-  
-  ```
+  - bid_value (required) : integer, the amount of coins to bid.
 
   Example Request
   ```bash
-  
+    curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28396506/bid' \
+    --header 'Authorization: Bearer {API-KEY-HERE}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{"bid_value":64}'
   ```
 
   Example Response:
   ```json
-
+    {
+        "success": true,
+        "auction_data": {
+            "id": 28396506,
+            "app_id": 730,
+            "auction_highest_bid": 64,
+            "auction_highest_bidder": 303119,
+            "auction_number_of_bids": 11,
+            "auction_ends_at": 1638279554
+        },
+        "invoice": {
+            "user_id": 303119,
+            "status": 200,
+            "processor_id": 1,
+            "currency_id": 1,
+            "amount_coins": 64,
+            "metadata": {
+                "deposit_id": 28396506
+            },
+            "ip": "0.0.0.0",
+            "updated_at": 1638279494,
+            "created_at": 1638279490,
+            "id": 5190329,
+            "processor_ref": "15064711",
+            "status_name": "CREATED",
+            "processor_name": "Steam P2P",
+            "currency_code": "CSGOEMPIRE_COIN",
+            "complete_at": null,
+            "refunded_at": null
+        }
+    }
   ```
 
   [[Back to contents](#contents)]
