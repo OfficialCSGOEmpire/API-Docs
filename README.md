@@ -1,44 +1,40 @@
-CSGOEmpire API Key Documentation
-=============================
+# CSGOEmpire API Key Documentation
 
 # Contents
 
+- [CSGOEmpire API Key Documentation](#csgoempire-api-key-documentation)
 - [Contents](#contents)
 - [Getting started](#getting-started)
 - [API Keys](#api-keys)
 - [Rate Limits](#rate-limits)
+- [Metadata](#metadata)
+- [Get Active Auctions](#get-active-auctions)
+- [Settings](#settings)
 - [Trade Status Enums](#trade-status-enums)
-- Endpoints:
-  - [Metadata](#metadata)
-  - [Trades](#get-active-trades)
-  - [Auctions](#get-active-auctions)
-  - [Settings](#settings)
-  - [Deposit](#deposits):
-    - [Inventory](#get-csgo-inventory)
-    - [Unique Info](#get-unique-info)
-    - [Deposit](#create-deposit)
-    - [Cancel Deposit](#cancel-deposit)
-    - [Sell Now](#sell-now)
-  - [Withdraw](#withdraw):
-    - [Items](#get-listed-items)
-    - [Stats](#get-depositor-stats)
-    - [Withdraw Item](#create-withdrawal)
-    - [Bid](#place-bid)
-- [Websocket](#websocket):
-  - [Connect to the websocket](#connect-to-websocket)
-  - [Authenticate](#websocket-authentication)
-  - [Events](#websocket-events)
-    - [timesync](#timesync)
-    - [new_item](#new_item)
-    - [updated_item](#updated_item)
-    - [auction_update](#auction_update)
-    - [deleted_item](#deleted_item)
-    - [trade_status](#trade_status)
-
-
-----------------------------------
+- [Deposits](#deposits)
+  - [Get CSGO Inventory](#get-csgo-inventory)
+  - [Get Unique Info](#get-unique-info)
+  - [Create Deposit](#create-deposit)
+  - [Cancel Deposit](#cancel-deposit)
+  - [Sell Now](#sell-now)
+- [Withdraw](#withdraw)
+  - [Get Listed Items](#get-listed-items)
+  - [Get Depositor Stats](#get-depositor-stats)
+  - [Create Withdrawal](#create-withdrawal)
+  - [Place Bid](#place-bid)
+- [Websocket](#websocket)
+  - [Connect To Websocket](#connect-to-websocket)
+  - [Websocket Authentication](#websocket-authentication)
+  - [Websocket Events](#websocket-events)
+  - [timesync](#timesync)
+  - [new_item](#new_item)
+  - [updated_item](#updated_item)
+  - [auction_update](#auction_update)
+  - [deleted_item](#deleted_item)
+  - [trade_status](#trade_status)
 
 # Getting started
+
 All requests are included in bash form. You can use a program like [Postman](https://www.postman.com/downloads/) to import the request ([example](https://w1z0.xyz/i/fea03bc7f399b7d.mp4)) and generate ([example](https://w1z0.xyz/i/187fd8084ca40d6.mp4)) code for most major languages.
 
 Any code provided is as an example, you should write your own if you wish to do more than the most basic tasks.
@@ -46,29 +42,39 @@ Any code provided is as an example, you should write your own if you wish to do 
 Any input marked '(required)' is required for the request to work, anything without that is optional.
 
 # API Keys
-Coming soon:tm:
+
+API keys can be created, viewed and revoked here: https://csgoempire.com/trading/apikey
+
+Setting up an API key requires 2FA to be activated, 2FA codes are not required for requests authenticated via API key.
 
 # Rate Limits
+
 Rate limits limit the number of requests you can make per second from one IP. Currently there is a global request limit (to any endpoint) of 120 requests per 10 seconds. If you exceed a ratelimit you'll be unable to access any endpoints for 60 seconds. This will return a response with a status code of 429.
 
 [[Back to contents](#contents)]
 
 # Metadata
+
 URL: https://csgoempire.com/api/v2/metadata/socket
 
 Method: GET
 
 Returns the user object, which is used to identify via websocket, as well as socket token (authorizationToken) & socket signature (signature) which are used to authenticate on websocket.
 
+<details>
+<summary>Example Request:</summary>
 
-Example request:
 ```bash
 curl --location --request GET 'https://csgoempire.com/api/v2/metadata/socket' \
 --header 'Authorization: Bearer {API-KEY-HERE}'
 
 ```
 
-Response:
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
 ```json
 {
     "user": {
@@ -158,8 +164,10 @@ Response:
     "socket_signature": ""
 }
 
-```
+````
 
+</details>
+ 
 [[Back to contents](#contents)]
 
 # Get Active Trades
@@ -169,14 +177,22 @@ Method: GET
 
 Returns an array of all items currently being deposited or withdrawn by this account. This does not include bids placed on active items until the auction ends.
 
-Example request:
+
+<details>
+<summary>Example Request:</summary>
+
+
 ```bash
 curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/trades' \
 --header 'Authorization: Bearer {API-KEY-HERE}'
 
-```
+````
 
-Example response:
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
 ```json
 {
     "data": {
@@ -250,23 +266,32 @@ Example response:
 }
 ```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
 # Get Active Auctions
+
 URL: https://csgoempire.com/api/v2/trading/user/auctions
 
 Method: GET
 
 Returns an array of all auctions currently being bid on by this account.
 
-Example request:
+<details>
+<summary>Example Request:</summary>
+
 ```bash
 curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/auctions' \
 --header 'Authorization: Bearer {API-KEY-HERE}'
 
 ```
 
-Example response:
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
 ```json
 {
     "success": true,
@@ -344,9 +369,12 @@ Example response:
 }
 ```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
 # Settings
+
 URL: https://csgoempire.com/api/v2/trading/user/settings
 
 Method: POST
@@ -354,11 +382,13 @@ Method: POST
 Used to update your tradelink and/or Steam API key
 
 Inputs:
+
 - trade_url (required): string, your steam trade url
 - steam_api_key : string, your steam api key
 
+<details>
+<summary>Example Request:</summary>
 
-Example request:
 ```bash
 curl --location --request POST 'https://csgoempire.com/api/v2/trading/user/settings' \
 --header 'Authorization: Bearer {API-KEY-HERE}' \
@@ -366,7 +396,11 @@ curl --location --request POST 'https://csgoempire.com/api/v2/trading/user/setti
 --data-raw '{"trade_url":"https://steamcommunity.com/tradeoffer/new/?partner=145926386&token=zYMYgbXB"}'
 ```
 
-Example response:
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
 ```json
 {
     "success": true,
@@ -374,48 +408,57 @@ Example response:
 }
 ```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
 # Trade Status Enums
+
 Below are a list of trade statuses. Trade endpoints will return status enums.
 
- - Error = -1;
- - Pending = 0;
- - Received = 1;
- - Processing = 2;
- - Sending = 3;
- - Confirming = 4;
- - Sent = 5;
- - Completed = 6;
- - Declined = 7;
- - Canceled = 8;
- - TimedOut = 9;
- - Credited = 10;
+- Error = -1;
+- Pending = 0;
+- Received = 1;
+- Processing = 2;
+- Sending = 3;
+- Confirming = 4;
+- Sent = 5;
+- Completed = 6;
+- Declined = 7;
+- Canceled = 8;
+- TimedOut = 9;
+- Credited = 10;
 
 [[Back to contents](#contents)]
 
-----------------------------------
-
 # Deposits
 
-  ## Get CSGO Inventory
-  URL: https://csgoempire.com/api/v2/trading/user/inventory
-  
-  Method: GET
+## Get CSGO Inventory
 
-  Fetch your inventory from steam and caches it to the database for 1 hour.
+URL: https://csgoempire.com/api/v2/trading/user/inventory
 
-  Inputs:
-  - invalid : yes|no - Filters invalid items, defaults to no filtering
+Method: GET
 
-  Example Request
-  ```bash
+Fetch your inventory from steam and caches it to the database for 1 hour.
+
+Inputs:
+
+- invalid : yes|no - Filters invalid items, defaults to no filtering
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
   curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/inventory' \
   --header 'Authorization: Bearer {API-KEY-HERE}'
-  ```
+```
 
-  Example Response:
-  ```json
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
   {
     "success": true,
     "updatedAt": 1638265100,
@@ -535,26 +578,35 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
         }
     ]
 }
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
-  ## Get Unique Info
-  URL: https://csgoempire.com/api/v2/trading/user/inventory/unique-info
-  
-  Method: GET
+## Get Unique Info
 
-  Get inspected unique info for items in user inventory. Examples include float/sticker data
+URL: https://csgoempire.com/api/v2/trading/user/inventory/unique-info
 
-  Example Request
-  ```bash
+Method: GET
+
+Get inspected unique info for items in user inventory. Examples include float/sticker data
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
     curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/inventory/unique-info' \
     --header 'Authorization: Bearer {API-KEY-HERE}'
-  ```
+```
 
+</details>
+ 
 
-  Example Response:
-  ```json
+<details>
+<summary>Example Response:</summary>
+ 
+```json
 {
     "success": true,
     "data": [
@@ -618,24 +670,31 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             "stickers": []
         }
 }
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
-  ## Create Deposit
-  URL: https://csgoempire.com/api/v2/trading/deposit
-  
-  Method: POST
+## Create Deposit
 
-  Description goes here
+URL: https://csgoempire.com/api/v2/trading/deposit
 
-  Inputs:
-  - Items: (required) array with array elements: [id: itemId, custom_price: int, coin_value: int]
+Method: POST
 
-  Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001 
+Description goes here
 
-  Example Input:
-  ```json
+Inputs:
+
+- Items: (required) array with array elements: [id: itemId, custom_price: int, coin_value: int]
+
+Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
+
+
+<details>
+<summary>Example Input:</summary>
+
+```json
     {
         "items": [
             {
@@ -645,18 +704,26 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             }
         ]
     }
-  ```
+```
 
-  Example Request
-  ```bash
+</details>
+
+<details>
+<summary>Example Request:</summary>y>
+
+```bash
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit' \
     --header 'Authorization: Bearer {API-KEY-HERE}' \
     --header 'Content-Type: application/json' \
     --data-raw '{"items":[{"id":3731677704,"custom_price_percentage":32,"coin_value":576811}]}'
-  ```
+```
 
-  Example Response:
-  ```json
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
     {
         "success": true,
         "deposits": {
@@ -689,49 +756,69 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             }
         }
     }
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
-  ## Cancel Deposit
-  URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT-ID}/cancel
-  
-  Method: POST
+## Cancel Deposit
 
-  Cancels processing deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
+URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT-ID}/cancel
 
-  Example Request
-  ```bash
+Method: POST
+
+Cancels processing deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28391470/cancel' \
-    --header 'Authorization: Bearer {API-KEY-HERE}' 
-  ```
+    --header 'Authorization: Bearer {API-KEY-HERE}'
+```
 
-  Example Response:
-  ```json
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
     {
         "success": true
     }
-  ```
+```
 
-  ## Sell Now
-  URL:  https://csgoempire.com/api/v2//trading/deposit/{deposit_id}/sell
-  
-  Method: POST
+</details>
+ 
+[[Back to contents](#contents)]
 
-  Description goes here
+## Sell Now
 
-  Inputs:
-  - deposit_id (required) : integer - Required in the URL
+URL: https://csgoempire.com/api/v2//trading/deposit/{deposit_id}/sell
 
+Method: POST
 
-  Example Request
-  ```bash
+Description goes here
+
+Inputs:
+
+- deposit_id (required) : integer - Required in the URL
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
   curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28393316/sell' \
   --header 'Authorization: Bearer {API-KEY-HERE}'
-  ```
+```
 
-  Example Response:
-  ```json
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
     {
         "success": true,
         "auction_data": {
@@ -743,40 +830,48 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             "auction_ends_at": 1638273900
         }
     }
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
-
-----------------------------------
 
 # Withdraw
 
-  ## Get Listed Items
-  URL: https://csgoempire.com/api/v2/trading/items
-  
-  Method: GET
+## Get Listed Items
 
-  Get a list of all items listed on the withdrawals page
+URL: https://csgoempire.com/api/v2/trading/items
 
-  Inputs:
-  - per_page - (required), number. How many items to fetch. Min is 1 and max is 200 for quests and 5000 for logged in user
-  - page - (required), number. Page to fetch.
-  - search - string. Item market name to search. 2 char min length.
-  - order - string. Field to use for ordering supported fields: market_value
-  - sort - string. Sorting asc or desc. Default asc
-  - auction - string. Auction only, yes/no, defaults to no.
-  - price_min - number. Minimum item current price.
-  - price_max - number. Maximum item current price.
-  - price_max_above - number. Maximum item percentage to show.
+Method: GET
 
-  Example Request
-  ```bash
+Get a list of all items listed on the withdrawals page
+
+Inputs:
+
+- per_page - (required), number. How many items to fetch. Min is 1 and max is 200 for quests and 5000 for logged in user
+- page - (required), number. Page to fetch.
+- search - string. Item market name to search. 2 char min length.
+- order - string. Field to use for ordering supported fields: market_value
+- sort - string. Sorting asc or desc. Default asc
+- auction - string. Auction only, yes/no, defaults to no.
+- price_min - number. Minimum item current price.
+- price_max - number. Maximum item current price.
+- price_max_above - number. Maximum item percentage to show.
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
   curl --location --request GET 'https://csgoempire.com/api/v2/trading/items?per_page=10&page=1&price_max_above=15&sort=desc&order=market_value' \
   --header 'Authorization: Bearer {API-KEY-HERE}'
-  ```
+```
 
-  Example Response:
-  ```json
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
     {
         "current_page": 1,
         "data": [
@@ -1102,28 +1197,38 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
         "to": 3,
         "total": 15079
     }
-  ```
+```
 
-  [[Back to contents](#contents)]
+</details>
+ 
+[[Back to contents](#contents)]
 
-  ## Get Depositor Stats
-  URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/stats
-  
-  Method: GET
+## Get Depositor Stats
 
-  Get the depositing users stats from a unique deposit ID
+URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/stats
 
-  Inputs:
-  - deposit_id (required) : integer - Required in the URL
+Method: GET
 
-  Example Request
-  ```bash
+Get the depositing users stats from a unique deposit ID
+
+Inputs:
+
+- deposit_id (required) : integer - Required in the URL
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
     curl --location --request GET 'https://csgoempire.com/api/v2/trading/deposit/28079776/stats' \
     --header 'Authorization: Bearer {API-KEY-HERE}'
-  ```
+```
 
-  Example Response:
-  ```json
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
     {
         "delivery_rate_recent": 1,
         "delivery_rate_long": 1,
@@ -1134,28 +1239,38 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
         "user_has_trade_notifications_enabled": false,
         "user_is_online": null
     }
-  ```
+```
 
-  [[Back to contents](#contents)]
+</details>
+ 
+[[Back to contents](#contents)]
 
-  ## Create Withdrawal
-  URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/withdraw
-  
-  Method: POST
+## Create Withdrawal
 
-  Withdraw item directly if the auction has expired without being won.
+URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/withdraw
 
-  Inputs:
-  - deposit_id (required) : integer - Required in the URL
+Method: POST
 
-  Example Request
-  ```bash
+Withdraw item directly if the auction has expired without being won.
+
+Inputs:
+
+- deposit_id (required) : integer - Required in the URL
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28387732/withdraw' \
     --header 'Authorization: Bearer {API-KEY-HERE}'
-  ```
+```
 
-  Example Response:
-  ```json
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
     {
         "success": true,
         "data": {
@@ -1292,30 +1407,40 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             "processor_name": "Steam P2P"
         }
     }
-  ```
+```
 
-  [[Back to contents](#contents)]
+</details>
+ 
+[[Back to contents](#contents)]
 
-  ## Place Bid
-  URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/bid
-  
-  Method:
+## Place Bid
 
-  Place a bid on an auction.
+URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/bid
 
-  Inputs:
-  - bid_value (required) : integer, the amount of coins to bid.
+Method:
 
-  Example Request
-  ```bash
+Place a bid on an auction.
+
+Inputs:
+
+- bid_value (required) : integer, the amount of coins to bid.
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28396506/bid' \
     --header 'Authorization: Bearer {API-KEY-HERE}' \
     --header 'Content-Type: application/json' \
     --data-raw '{"bid_value":64}'
-  ```
+```
 
-  Example Response:
-  ```json
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
     {
         "success": true,
         "auction_data": {
@@ -1347,25 +1472,30 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
             "refunded_at": null
         }
     }
-  ```
+```
 
-  [[Back to contents](#contents)]
-
-----------------------------------
+</details>
+ 
+[[Back to contents](#contents)]
 
 # Websocket
 
-  ## Connect To Websocket
-  
-  URL: wss://trade.csgoempire.com/s/?EIO=3&transport=websocket
+## Connect To Websocket
 
-  Example code for connecting to the websocket can be found [here](https://github.com/OfficialCSGOEmpire/API-Docs/blob/main/examples/websocket-connection.js)
+URL: wss://trade.csgoempire.com/s/?EIO=3&transport=websocket
+
+Example code for connecting to the websocket can be found [here](https://github.com/OfficialCSGOEmpire/API-Docs/blob/main/examples/websocket-connection.js)
 
 [[Back to contents](#contents)]
 
-  ## Websocket Authentication
-  The socket can be used as unauthenticated but if you want to receive trade updates you need to auth. To authenticate you need to emit identify event with the data:
-  ```json
+## Websocket Authentication
+
+The socket can be used as unauthenticated but if you want to receive trade updates you need to auth. To authenticate you need to emit identify event with the data:
+
+<details>
+ <summary>Example Frame:</summary>
+
+```json
   {
     "uid": <userid>,
     "model": { ...user_model },
@@ -1373,12 +1503,17 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     "signature": <token_signature>,
     "uuid": <optional_device_identifier>
   }
-  ```
+```
+</details>
+ 
+See [metadata](#metadata) on how to get the required socket auth data.
 
-  See [metadata](#metadata) on how to get the required socket auth data.
+This returns the following:
 
-  This returns the following:
-  ```json
+<details>
+<summary>Example Response:</summary>
+
+```json
 42/trade,
 [
    "init",
@@ -1436,26 +1571,37 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
       "name":"Artemis"
    }
 ]
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
-  ## Websocket Events
-  ### `timesync`
-  Syncing server timestamp. It is not emitted unless the client asks it by sending timesync event.
+## Websocket Events
 
-  Event sample:
-  ```json
+## timesync
+
+Syncing server timestamp. It is not emitted unless the client asks it by sending timesync event.
+
+<details>
+<summary>Event sample:</summary>
+
+```json
   42/trade,["timesync",1619682261540]
-  ```
+```
 
-  [[Back to contents](#contents)]
+</details>
+ 
+[[Back to contents](#contents)]
 
-  ### `new_item`
-  Emitted when a new item is available.
-  
-  Event sample:
-  ```json
+## new_item
+
+Emitted when a new item is available.
+
+<details>
+<summary>Event sample:</summary>
+
+```json
 42 / trade, ["new_item", {
     "app_id": 730,
     "auction_auto_withdraw_failed": null,
@@ -1485,15 +1631,20 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     "id": 10003,
 }]
 
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
-  ### `updated_item`
-  Emitted when an existing item has been updated. For example, if status changes.
-  
-  Event sample:
-  ```json
+## updated_item
+
+Emitted when an existing item has been updated. For example, if status changes.
+
+<details>
+<summary>Event sample:</summary>
+
+```json
 42 / trade, ["updated_item", {
     "app_id": 730,
     "auction_auto_withdraw_failed": null,
@@ -1523,15 +1674,20 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     "id": 10003,
 }]
 
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
-  ### `auction_update`
-  Emitted when someone places a bid for an auction item.
+## auction_update
 
-  Event sample:
-  ```json
+Emitted when someone places a bid for an auction item.
+
+<details>
+<summary>Event sample:</summary>
+
+```json
 42 / trade, ["updated_item", {
     "app_id": 730,
     "auction_auto_withdraw_failed": null,
@@ -1561,25 +1717,35 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     "id": 10003,
 }]
 
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
-  ### `deleted_item`
-  Emitted when the item is not anymore available for withdrawing. Eg. the auction ends and the winner withdraws it. Contains an array of ids. Currently always just one id but may be more in future.
-  
-  Event sample:
-  ```json
+## deleted_item
+
+Emitted when the item is not anymore available for withdrawing. Eg. the auction ends and the winner withdraws it. Contains an array of ids. Currently always just one id but may be more in future.
+
+<details>
+<summary>Event sample:</summary>
+
+```json
 42/trade,["deleted_item",[10003]]
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
 
-  ### `trade_status`
-  Emitted when the trade status gets updated.
-  
-  Event sample:
-  ```json
+## trade_status
+
+Emitted when the trade status gets updated.
+
+<details>
+<summary>Event sample:</summary>
+
+```json
 42 / trade, ["trade_status", {
     "type": "deposit",
     "data": {
@@ -1644,6 +1810,8 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
     }
 }]
 
-  ```
+```
 
+</details>
+ 
 [[Back to contents](#contents)]
