@@ -167,7 +167,7 @@ curl --location --request GET 'https://csgoempire.com/api/v2/metadata/socket' \
 ````
 
 </details>
- 
+
 [[Back to contents](#contents)]
 
 # Get Active Trades
@@ -601,7 +601,7 @@ Get inspected unique info for items in user inventory. Examples include float/st
 ```
 
 </details>
- 
+
 
 <details>
 <summary>Example Response:</summary>
@@ -689,7 +689,6 @@ Inputs:
 - Items: (required) array with array elements: [id: itemId, custom_price: int, coin_value: int]
 
 Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
-
 
 <details>
 <summary>Example Input:</summary>
@@ -1504,6 +1503,7 @@ The socket can be used as unauthenticated but if you want to receive trade updat
     "uuid": <optional_device_identifier>
   }
 ```
+
 </details>
  
 See [metadata](#metadata) on how to get the required socket auth data.
