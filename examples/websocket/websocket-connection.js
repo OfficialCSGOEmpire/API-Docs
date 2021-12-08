@@ -5,7 +5,9 @@ const axios = require('axios');
 const csgoempireApiKey = "YOUR API KEY HERE";
 
 // Replace domain to '.gg' if '.com' is blocked
-const socketEndpoint = 'wss://trade.csgoempire.com/trade';
+const domain = "csgoempire.com"
+
+const socketEndpoint = `wss://trade.${domain}/trade`;
 
 // Set the authorization header for all axios requests to the CSGOEmpire API Key
 axios.defaults.headers.common['Authorization'] = `Bearer ${csgoempireApiKey}`;
@@ -17,7 +19,7 @@ async function initSocket() {
 
     try {
         // Get the user data from the socket
-        const userData = (await axios.get("https://csgoempire.com/api/v2/metadata/socket")).data;
+        const userData = (await axios.get(`https://${domain}/api/v2/metadata/socket`)).data;
 
         // Initalize socket connection
         const socket = io(
