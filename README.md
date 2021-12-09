@@ -1483,7 +1483,7 @@ Inputs:
 
 URL: wss://trade.csgoempire.com/s/?EIO=3&transport=websocket
 
-Example code for connecting to the websocket can be found [here](https://github.com/OfficialCSGOEmpire/API-Docs/blob/main/examples/websocket-connection.js)
+Example code for connecting to the websocket can be found [here](https://github.com/OfficialCSGOEmpire/API-Docs/blob/main/examples/websocket/websocket-connection.js)
 
 [[Back to contents](#contents)]
 
