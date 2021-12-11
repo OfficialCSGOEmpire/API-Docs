@@ -1710,32 +1710,12 @@ Emitted when someone places a bid for an auction item.
 <summary>Event sample:</summary>
 
 ```json
-42 / trade, ["updated_item", {
+42 / trade, ["auction_update", {
     "app_id": 730,
     "auction_auto_withdraw_failed": null,
     "auction_ends_at": 1631921311,
-    "auction_highest_bid": null,
-    "auction_highest_bidder": null,
-    "auction_number_of_bids": 0,
-    "custom_name": null,
-    "description_type": "Souvenir Mil-Spec Grade SMG",
-    "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6r8FAZu7OHNdQJO5du-gM7bwqb2MeuClTsCv8Ek2LiZ9t2giwa28hVlZGD0doSUIANqYV_U_gC2366x0j0WoURS",
-    "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6r8FAZu7OHNdQJO5du-gM7bwqb2MeuClTsCv8Ek2LiZ9t2giwa28hVlZGD0doSUIANqYV_U_gC2366x0j0WoURS",
-    "is_commodity": false,
-    "market_name": "Souvenir MP9 | Hot Rod (Factory New)",
-    "market_value": 3394,
-    "name": "Souvenir MP9 | Hot Rod (Factory New)",
-    "name_color": "FFD700",
-    "paint_index": null,
-    "paint_seed": null,
-    "preview_id": null,
-    "price_is_unreliable": 0,
-    "stickers": [],
-    "tradable": true,
-    "tradelock": false,
-    "updated_at": "2021-09-17 23:15:33",
-    "wear": null,
-    "published_at": "2021-09-17T23:25:31.111700Z",
+    "auction_highest_bid": 300,
+    "auction_highest_bidder": 1111,
     "id": 10003,
 }]
 
