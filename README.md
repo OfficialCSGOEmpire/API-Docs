@@ -6,6 +6,9 @@
 - [Contents](#contents)
 - [Getting started](#getting-started)
 - [API Keys](#api-keys)
+- [Libraries & Links](#libraries--links)
+  - [Libraries](#libraries)
+  - [Links](#links)
 - [Rate Limits](#rate-limits)
 - [Metadata](#metadata)
 - [Get Active Auctions](#get-active-auctions)
@@ -46,6 +49,24 @@ Any input marked '(required)' is required for the request to work, anything with
 API keys can be created, viewed and revoked here: https://csgoempire.com/trading/apikey
 
 Setting up an API key requires 2FA to be activated, 2FA codes are not required for requests authenticated via API key.
+
+# Libraries & Links
+
+Currently we don't offer any official library for the API, but below you can find links to **unofficial** libraries and resources to help you with creating your first bot.
+
+Please note as these are **unofficial** libraries, they may not be maintained or updated regularly, you should also verify the source code yourself.
+
+If you have something you think should be added here, please [open an issue](https://github.com/OfficialCSGOEmpire/API-Docs/issues) with a link to the library or resource and a description of what it is/does.
+
+## Libraries
+
+ - [Javascript](https://github.com/gustavo-dev/csgoempire-api) (Incomplete) by [@gustavo-dev](https://github.com/gustavo-dev)
+
+## Links
+
+- [Antal's Deposit Bot](https://github.com/antal-k/csgoempire-deposit) by [@antal-k](https://github.com/antal-k)
+
+
 
 # Rate Limits
 
