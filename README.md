@@ -60,7 +60,7 @@ If you have something you think should be added here, please [open an issue](htt
 
 ## Libraries
 
- - [Javascript](https://github.com/gustavo-dev/csgoempire-api) (Incomplete) by [@gustavo-dev](https://github.com/gustavo-dev)
+ - [Javascript](https://github.com/gustavo-dev/csgoempire-api) by [@gustavo-dev](https://github.com/gustavo-dev)
 
 ## Links
 
