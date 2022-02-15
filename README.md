@@ -14,6 +14,10 @@
 - [Get Active Auctions](#get-active-auctions)
 - [Settings](#settings)
 - [Trade Status Enums](#trade-status-enums)
+- [Blocking Users](#blocking-users)
+  - [Blocking a User](#blocking-a-user)
+  - [Unblocking a User](#unblocking-a-user)
+  - [View all blocked users](#view-all-blocked-users)
 - [Deposits](#deposits)
   - [Get CSGO Inventory](#get-csgo-inventory)
   - [Get Unique Info](#get-unique-info)
@@ -60,7 +64,7 @@ If you have something you think should be added here, please [open an issue](htt
 
 ## Libraries
 
- - [Javascript](https://github.com/gustavo-dev/csgoempire-api) (Incomplete) by [@gustavo-dev](https://github.com/gustavo-dev)
+ - [Javascript](https://github.com/gustavo-dev/csgoempire-api) by [@gustavo-dev](https://github.com/gustavo-dev)
 
 ## Links
 
@@ -452,6 +456,109 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 - Credited = 10;
 
 [[Back to contents](#contents)]
+
+# Blocking Users
+
+## Blocking a User
+
+URL: https://csgoempire.com/api/v2/trading/block-list/{steam_id}
+
+Method: POST
+
+Used to block a user, preventing them from trading with you, and you with them.
+
+Inputs:
+- steam_id : string, the users steam ID
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
+    curl --location --request POST 'https://csgoempire.com/api/v2/trading/block-list/76561197960287930' \
+    --header 'Authorization: Bearer {API-KEY-HERE}'
+```
+
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
+{
+    "success": true,
+}
+```
+
+</details>
+
+[[Back to contents](#contents)]
+
+## Unblocking a User
+
+URL: https://csgoempire.com/api/v2/trading/block-list/{steam_id}
+
+Method: DELETE
+
+Used to unblock a user, allowing them to trade with you, and you with them.
+
+Inputs:
+- steam_id : string, the users steam ID
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
+    curl --location --request DELETE 'https://csgoempire.com/api/v2/trading/block-list/76561197960287930' \
+    --header 'Authorization: Bearer {API-KEY-HERE}'
+```
+
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
+{
+    "success": true,
+}
+```
+
+</details>
+
+## View all blocked users
+
+URL: https://csgoempire.com/api/v2/trading/block-list
+
+Method: GET
+
+Used to get a list of all currently blocked users.
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
+    curl --location --request GET 'https://csgoempire.com/api/v2/trading/block-list' \
+    --header 'Authorization: Bearer {API-KEY-HERE}'
+```
+
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
+[
+  {
+    "id": 1,
+    "blocker_user_id": 76561198106192114,
+    "blocked_user_id": 76561197960287930,
+    "created_at": "2022-02-15 11:57:08",
+    "updated_at": "2022-02-15 11:57:08"
+  }
+]
+```
+
+</details>
 
 # Deposits
 
@@ -1710,34 +1817,16 @@ Emitted when someone places a bid for an auction item.
 <summary>Event sample:</summary>
 
 ```json
-42 / trade, ["updated_item", {
-    "app_id": 730,
-    "auction_auto_withdraw_failed": null,
-    "auction_ends_at": 1631921311,
-    "auction_highest_bid": null,
-    "auction_highest_bidder": null,
-    "auction_number_of_bids": 0,
-    "custom_name": null,
-    "description_type": "Souvenir Mil-Spec Grade SMG",
-    "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6r8FAZu7OHNdQJO5du-gM7bwqb2MeuClTsCv8Ek2LiZ9t2giwa28hVlZGD0doSUIANqYV_U_gC2366x0j0WoURS",
-    "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6r8FAZu7OHNdQJO5du-gM7bwqb2MeuClTsCv8Ek2LiZ9t2giwa28hVlZGD0doSUIANqYV_U_gC2366x0j0WoURS",
-    "is_commodity": false,
-    "market_name": "Souvenir MP9 | Hot Rod (Factory New)",
-    "market_value": 3394,
-    "name": "Souvenir MP9 | Hot Rod (Factory New)",
-    "name_color": "FFD700",
-    "paint_index": null,
-    "paint_seed": null,
-    "preview_id": null,
-    "price_is_unreliable": 0,
-    "stickers": [],
-    "tradable": true,
-    "tradelock": false,
-    "updated_at": "2021-09-17 23:15:33",
-    "wear": null,
-    "published_at": "2021-09-17T23:25:31.111700Z",
-    "id": 10003,
-}]
+42 / trade, ["auction_update",
+   {
+      "id":28980321,
+      "app_id":730,
+      "auction_highest_bid":450,
+      "auction_highest_bidder":6210766,
+      "auction_number_of_bids":5,
+      "auction_ends_at":1639407410
+   }
+]
 
 ```
 
