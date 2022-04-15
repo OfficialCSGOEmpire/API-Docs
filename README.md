@@ -14,6 +14,7 @@
 - [Get Active Auctions](#get-active-auctions)
 - [Settings](#settings)
 - [Trade Status Enums](#trade-status-enums)
+- [Transaction History](#transaction-history)
 - [Blocking Users](#blocking-users)
   - [Blocking a User](#blocking-a-user)
   - [Unblocking a User](#unblocking-a-user)
@@ -456,6 +457,139 @@ Below are a list of trade statuses. Trade endpoints will return status enums.
 - Credited = 10;
 
 [[Back to contents](#contents)]
+
+# Transaction History
+
+URL: https://csgoempire.com/api/v2/user/transactions?page={page_number}
+
+Method: GET
+
+Used to get your transaction history.
+
+Inputs:
+- page_number : int, the page you wish to get
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
+    curl --location --request GET 'https://csgoempire.com/api/v2/user/transactions?page=1' \
+    --header 'Authorization: Bearer {API-KEY-HERE}'
+```
+
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
+{
+    "current_page": 1,
+    "data": [
+        {
+            "key": "withdrawal_invoices",
+            "type": "Steam Auction Bid Withdrawal #0000",
+            "balance": 100,
+            "delta": 10,
+            "balance_after": 90,
+            "timestamp": 1650031638.85,
+            "timestamp_raw": 1650031638850,
+            "date": "2022-04-15 14:07:18",
+            "invoice_id": null
+        }
+    ],
+    "first_page_url": "user/transactions?page=1",
+    "from": 1,
+    "last_page": 2,
+    "last_page_url": "user/transactions?page=2",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": "user/transactions?page=2",
+            "label": "2",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=3",
+            "label": "3",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=4",
+            "label": "4",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=5",
+            "label": "5",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=6",
+            "label": "6",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=7",
+            "label": "7",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=8",
+            "label": "8",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=9",
+            "label": "9",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=10",
+            "label": "10",
+            "active": false
+        },
+        {
+            "url": null,
+            "label": "...",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=669",
+            "label": "669",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=670",
+            "label": "670",
+            "active": false
+        },
+        {
+            "url": "user/transactions?page=2",
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": "user/transactions?page=2",
+    "path": "user/transactions",
+    "per_page": 20,
+    "prev_page_url": null,
+    "to": 20,
+    "total": 13386
+}
+```
+
+</details>
+
 
 # Blocking Users
 
@@ -985,6 +1119,12 @@ Inputs:
 - price_min - number. Minimum item current price.
 - price_max - number. Maximum item current price.
 - price_max_above - number. Maximum item percentage to show.
+- wear_min - number (0-1). Minimum float wear value.
+- wear_max - number (0-1). Maximum float wear value.
+- delivery_time_long_min - number. Minimum delivery time average from the last 100 items.
+- delivery_time_long_max - number. Maximum delivery time average from the last 100 items.
+- has_stickers - yes/no. Filters for items that have stickers.
+- is_commodity - yes/no. Filters for items that are commodities. Cannot have wear/sticker based filters.
 
 <details>
 <summary>Example Request:</summary>
