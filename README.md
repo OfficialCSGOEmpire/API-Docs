@@ -945,11 +945,11 @@ URL: https://csgoempire.com/api/v2/trading/deposit
 
 Method: POST
 
-Description goes here
+List an item(s) for sale.
 
 Inputs:
 
-- Items: (required) array with array elements: [id: itemId, custom_price: int, coin_value: int]
+- Items: (required) array with array elements: [id: itemId, custom_price: int, coin_value: int] (Max 20 per request)
 
 Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
 
@@ -963,6 +963,11 @@ Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
                 "id": 3731677704,
                 "custom_price_percentage": 32,
                 "coin_value": 576811
+            },
+            {
+                "id": 3731677705,
+                "custom_price_percentage": 35,
+                "coin_value": 52811
             }
         ]
     }
@@ -1061,7 +1066,7 @@ URL: https://csgoempire.com/api/v2//trading/deposit/{deposit_id}/sell
 
 Method: POST
 
-Description goes here
+Sell an item immediately.
 
 Inputs:
 
@@ -1685,7 +1690,7 @@ Inputs:
 
 URL: https://csgoempire.com/api/v2/trading/deposit/{DEPOSIT_ID}/bid
 
-Method:
+Method: POST
 
 Place a bid on an auction.
 
