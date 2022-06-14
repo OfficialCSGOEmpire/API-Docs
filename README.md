@@ -1131,6 +1131,10 @@ Inputs:
 - has_stickers - yes/no. Filters for items that have stickers.
 - is_commodity - yes/no. Filters for items that are commodities. Cannot have wear/sticker based filters.
 
+Ratelimit:
+- 3 request per 10 second if searching
+- 20 requests per minute if not searching
+
 <details>
 <summary>Example Request:</summary>
 
@@ -1758,6 +1762,9 @@ Inputs:
 URL: wss://trade.csgoempire.com/s/?EIO=3&transport=websocket
 
 Example code for connecting to the websocket can be found [here](https://github.com/OfficialCSGOEmpire/API-Docs/blob/main/examples/websocket/websocket-connection.js)
+
+Note:
+Connecting to the socket requires Socket.IO v2.x Client
 
 [[Back to contents](#contents)]
 
