@@ -949,7 +949,10 @@ List an item(s) for sale.
 
 Inputs:
 
-- Items: (required) array with array elements: [id: itemId, custom_price: int, coin_value: int] (Max 20 per request)
+- Items: (required) array with array elements: [id: itemId, coin_value: int] (Max 20 per request)
+- Item object:
+  - id: (required) item id
+  - coin_value: (required) coin value of item in coincents (if a custom percentage is added, this needs to be calculated)
 
 Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
 
