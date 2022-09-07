@@ -1118,7 +1118,7 @@ Get a list of all items listed on the withdrawals page
 
 Inputs:
 
-- per_page - (required), number. How many items to fetch. Min is 1 and max is 200 for quests and 2500 for logged in user
+- per_page - (required), number. How many items to fetch. Min is 1 and max is 200 for guests and 2500 for logged in user
 - page - (required), number. Page to fetch.
 - search - string. Item market name to search. 2 char min length.
 - order - string. Field to use for ordering supported fields: market_value
