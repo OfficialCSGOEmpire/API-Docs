@@ -985,7 +985,7 @@ Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit' \
     --header 'Authorization: Bearer {API-KEY-HERE}' \
     --header 'Content-Type: application/json' \
-    --data-raw '{"items":[{"id":3731677704,"custom_price_percentage":32,"coin_value":576811}]}'
+    --data-raw '{"items":[{"id":10003,"custom_price_percentage":32,"coin_value":576811}]}'
 ```
 
 </details>
@@ -994,38 +994,15 @@ Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
 <summary>Example Response:</summary>
  
 ```json
-    {
-        "success": true,
-        "deposits": {
-            "success": true,
-            "id": "28391470",
-            "item_id": 3731677704,
-            "invoice": {
-                "user_id": 303119,
-                "ip_address": "0.0.0.0",
-                "status": 200,
-                "processor_id": 3,
-                "currency_id": 4,
-                "amount": 761391,
-                "amount_coins": 761391,
-                "metadata": {
-                    "item_id": 3731677704,
-                    "custom_price_percentage": 32
-                },
-                "updated_at": 1638271689,
-                "created_at": 1638271688,
-                "id": 3885971,
-                "processor_ref": "28391470",
-                "processor_name": "Steam",
-                "provider_friendly_name": "Steam (P2P)",
-                "Method_friendly_name": null,
-                "status_name": "CREATED",
-                "currency_code": "STEAM_ITEMS",
-                "paid_at": null,
-                "refunded_at": null
-            }
-        }
-    }
+{
+   "success":true,
+   "deposits":{
+      "success":true,
+      "id":"10001",
+      "item_id":10003
+   },
+   "pending":[]
+}
 ```
 
 </details>
