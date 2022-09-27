@@ -950,11 +950,24 @@ List an item(s) for sale.
 Inputs:
 
 - Items: (required) array with array elements: [id: itemId, coin_value: int] (Max 20 per request)
-- Item object:
-  - id: (required) item id
-  - coin_value: (required) coin value of item in coincents (if a custom percentage is added, this needs to be calculated)
 
-Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
+Notes: 
+* coin_value is in coin cents, so 100.01 coins is represented as 10001
+* coin_value should be the price you want to list at. If you want to list at 100.01 coins, you should set coin_value to 10001. See below for how to calculate the coin value.
+* the frontend works differently, use how these docs suggest, the requests are smaller and therefore faster than the frontend.
+* you *should* be chunking these requests into groups of 20, but it's not required. If you don't chunk, you'll list slower and hit ratelimits more often.
+  
+Pricing example:
+```python
+percent = 5
+market_price = 10001
+price = round(market_price * (percent/100+1))
+item = {
+    "id": 3731677705,
+    "coin_value": price
+}
+```
+
 
 <details>
 <summary>Example Input:</summary>
@@ -964,12 +977,10 @@ Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
         "items": [
             {
                 "id": 3731677704,
-                "custom_price_percentage": 32,
                 "coin_value": 576811
             },
             {
                 "id": 3731677705,
-                "custom_price_percentage": 35,
                 "coin_value": 52811
             }
         ]
@@ -985,7 +996,7 @@ Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit' \
     --header 'Authorization: Bearer {API-KEY-HERE}' \
     --header 'Content-Type: application/json' \
-    --data-raw '{"items":[{"id":10003,"custom_price_percentage":32,"coin_value":576811}]}'
+    --data-raw '{"items":[{"id":3731677704,"custom_price_percentage":32,"coin_value":576811}]}'
 ```
 
 </details>
@@ -994,15 +1005,38 @@ Notes: coin_value is in coin cents, so 100.01 coins is represented as 10001
 <summary>Example Response:</summary>
  
 ```json
-{
-   "success":true,
-   "deposits":{
-      "success":true,
-      "id":"10001",
-      "item_id":10003
-   },
-   "pending":[]
-}
+    {
+        "success": true,
+        "deposits": {
+            "success": true,
+            "id": "28391470",
+            "item_id": 3731677704,
+            "invoice": {
+                "user_id": 303119,
+                "ip_address": "0.0.0.0",
+                "status": 200,
+                "processor_id": 3,
+                "currency_id": 4,
+                "amount": 761391,
+                "amount_coins": 761391,
+                "metadata": {
+                    "item_id": 3731677704,
+                    "custom_price_percentage": 32
+                },
+                "updated_at": 1638271689,
+                "created_at": 1638271688,
+                "id": 3885971,
+                "processor_ref": "28391470",
+                "processor_name": "Steam",
+                "provider_friendly_name": "Steam (P2P)",
+                "Method_friendly_name": null,
+                "status_name": "CREATED",
+                "currency_code": "STEAM_ITEMS",
+                "paid_at": null,
+                "refunded_at": null
+            }
+        }
+    }
 ```
 
 </details>
