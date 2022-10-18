@@ -222,74 +222,71 @@ curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/trades
  
 ```json
 {
-    "data": {
-        "deposits": [
-            {
-                "id": 28362974,
-                "user_id": 303119,
-                "item_id": 3731677704,
-                "items": [
-                    {
-                        "app_id": 730,
-                        "asset_id": 23569390085,
-                        "context_id": 2,
-                        "custom_price_percentage": 32,
-                        "description_type": "★ Covert Knife",
-                        "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLu8JAllx8zJfAJH4dmklYyPqPr1Ibndk2JL7cFOhuDG_Zi72VDh8kduZW37JIeWJ1Q9Yl2G8gToxrrmhpfvtZ6YynI1siRw7HbVmwv330-du9HHOA",
-                        "id": 3731677704,
-                        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLu8JAllx8zJfAJH4dmklYyPqPr1Ibndk2JL7cFOhuDG_Zi72VDh8kduZW37JIeWJ1Q9Yl2G8gToxrrmhpfvtZ6YynI1siRw7HbVmwv330-du9HHOA",
-                        "inspect_key": "14843909089252410308",
-                        "is_commodity": false,
-                        "market_name": "★ Bayonet | Gamma Doppler (Factory New) - Emerald",
-                        "market_value": 7571.3,
-                        "name": "★ Bayonet | Gamma Doppler (Factory New) - Emerald",
-                        "name_color": "8650AC",
-                        "paint_index": 568,
-                        "position": null,
-                        "preview_id": null,
-                        "price_is_unreliable": 1,
-                        "tradable": true,
-                        "tradelock": false,
-                        "type": "users",
-                        "updated_at": "2021-11-29 18:44:26",
-                        "wear": null
-                    }
-                ],
-                "total_value": 757130,
-                "security_code": "",
-                "tradeoffer_id": 0,
-                "trade_id": 2,
-                "status": 2,
-                "status_message": "",
-                "metadata": {
-                    "auction_highest_bid": null,
-                    "auction_highest_bidder": null,
-                    "auction_number_of_bids": 0,
-                    "auction_ends_at": 1638211686,
-                    "auction_auto_withdraw_failed": null,
-                    "price_updated_at": null,
-                    "trade_url": null,
-                    "partner": null,
-                    "total_fee": null,
-                    "fee": null,
-                    "old_total_value": null,
-                    "item_position_in_inventory": null,
-                    "item_inspected": true,
-                    "expires_at": null,
-                    "delivery_time": null,
-                    "phishingScamDetected": null,
-                    "item_validation": null,
-                    "possible_abuse_detected_at": null,
-                    "penalty": null,
-                    "service_name": "csgoempire",
-                    "service_invoice_id": 3850203
-                },
-                "created_at": "2021-11-29 18:45:06",
-                "updated_at": "2021-11-30 09:16:22"
-            }
+  "success": true,
+  "data": {
+    "deposits": [
+      {
+        "id": 11203,
+        "service_name": "csgoempire",
+        "service_invoice_id": 920,
+        "user_id": 303119,
+        "item_id": 50755,
+        "items": [
+          {
+            "asset_id": 26876810352,
+            "created_at": "2022-10-14 13:54:35",
+            "custom_price_percentage": 0,
+            "full_position": 83,
+            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-DjsjwN6vQglRd4cJ5nqeQ89mk2VHg_UpkYjj0JdLGdAFvNAvS81G6kLjq1pHtv5SdnHdhuCYq-z-DyHWIya-0",
+            "id": 50755,
+            "is_commodity": false,
+            "market_name": "★ M9 Bayonet | Forest DDPAT (Factory New)",
+            "market_value": 488.82,
+            "name_color": "8650AC",
+            "position": null,
+            "preview_id": null,
+            "price_is_unreliable": 1,
+            "tradable": true,
+            "tradelock": false,
+            "updated_at": "2022-10-18 08:46:45",
+            "wear": null
+          }
         ],
-        "withdrawals": []
-    }
+        "total_value": 48882,
+        "security_code": "",
+        "tradeoffer_id": 0,
+        "trade_id": 2,
+        "status": 2,
+        "status_message": "",
+        "metadata": {
+          "auction_highest_bid": null,
+          "auction_highest_bidder": null,
+          "auction_number_of_bids": 0,
+          "auction_ends_at": 1666083002,
+          "auction_auto_withdraw_failed": null,
+          "price_updated_at": null,
+          "trade_url": null,
+          "partner": null,
+          "total_fee": null,
+          "fee": null,
+          "old_total_value": null,
+          "item_position_in_inventory": null,
+          "item_inspected": true,
+          "expires_at": null,
+          "delivery_time": null,
+          "phishingScamDetected": null,
+          "item_validation": null,
+          "penalty": null
+        },
+        "item_hash": "7d1cacdc3016c134e284ae253543cc3b0fd63942",
+        "created_at": "2022-10-18 08:47:02",
+        "updated_at": "2022-10-18 08:47:02"
+      }
+    ],
+    "withdrawals": [
+      
+    ]
+  }
 }
 ```
 
@@ -321,78 +318,40 @@ curl --location --request GET 'https://csgoempire.com/api/v2/trading/user/auctio
  
 ```json
 {
-    "success": true,
-    "active_auctions": [
-        {
-            "app_id": 730,
-            "auction_auto_withdraw_failed": null,
-            "auction_ends_at": 1638264095,
-            "auction_highest_bid": 30,
-            "auction_highest_bidder": 303119,
-            "auction_number_of_bids": 5,
-            "custom_name": null,
-            "custom_price_percentage": null,
-            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79eJnY6PnvD7DLbUkmJE5YtwjLGVpd6s2QKx-RI_Yzr6JtOUdQRvZ1HVrAC5wOvqhp65tcnAn3ZqpGB8sqVEHs1X",
-            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79eJnY6PnvD7DLbUkmJE5YtwjLGVpd6s2QKx-RI_Yzr6JtOUdQRvZ1HVrAC5wOvqhp65tcnAn3ZqpGB8sqVEHs1X",
-            "is_commodity": false,
-            "market_name": "StatTrak™ Glock-18 | Off World (Field-Tested)",
-            "market_value": 26,
-            "name": "StatTrak™ Glock-18 | Off World (Field-Tested)",
-            "name_color": "CF6A32",
-            "paint_index": 680,
-            "paint_seed": 28,
-            "preview_id": "fef648b7fc3a",
-            "price_is_unreliable": false,
-            "stickers": [
-                {
-                    "slot": 0,
-                    "sticker_id": 4762,
-                    "wear": null,
-                    "scale": null,
-                    "rotation": null,
-                    "tint_id": null,
-                    "name": "ESPADA (Holo) | 2020 RMR",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPQV6CF7b9mMrAQ2J8KghYibakOQBlnaeYImUV74-0ktSIwqbwMbnTl20EvscijL6R84_33ATm-Eo5Nm72d4aLMlhpwcQqBfk"
-                },
-                {
-                    "slot": 1,
-                    "sticker_id": 4757,
-                    "wear": null,
-                    "scale": null,
-                    "rotation": null,
-                    "tint_id": null,
-                    "name": "Virtus.pro | 2020 RMR",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPQV6CF7b9mNnDbFF1NwNS-OvyflI2iqeaIThB7YvhkNjbz_ahZ-uExjkG7sAljruRpo-hjQ3t-UZyIzekFrt-2EA"
-                },
-                {
-                    "slot": 2,
-                    "sticker_id": 4790,
-                    "wear": null,
-                    "scale": null,
-                    "rotation": null,
-                    "tint_id": null,
-                    "name": "Renegades (Holo) | 2020 RMR",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPQV6CF7b9mN3WXWJ8KghYibakOQBlnfbJJWkTu4vnkIbYwqbxYu6BxWkJ65Zz2OjEodv0igPm_xZuMjylJI6LMlhpMRDciJU"
-                },
-                {
-                    "slot": 3,
-                    "sticker_id": 4770,
-                    "wear": null,
-                    "scale": null,
-                    "rotation": null,
-                    "tint_id": null,
-                    "name": "100 Thieves (Holo) | 2020 RMR",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPQV6CF7b9mNvbRWJ8KghYibakOQBlnfGaKG8VudjhldTbz6D2ZeLVkjgAuMYmi7mW8dyk3gXs80BqamD1d4eLMlhpm281b-A"
-                }
-            ],
-            "tradable": true,
-            "tradelock": false,
-            "updated_at": "2021-11-30 09:15:58",
-            "wear": 0.24,
-            "published_at": "2021-11-30T09:20:35.933425Z",
-            "id": 28384848
-        }
-    ]
+  "success": true,
+  "active_auctions": [
+    {
+      "auction_ends_at": 1666083221,
+      "auction_highest_bid": 227,
+      "auction_highest_bidder": 303119,
+      "auction_number_of_bids": 1,
+      "custom_price_percentage": 0,
+      "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXX7gNTPcUmqBwTTR7SQb37g5vWCwlxdFEC5uyncgZi0vGQJWwQudm0xtTexaD2ZOmClyVB5sL8h7mCHA",
+      "is_commodity": true,
+      "market_name": "Name Tag",
+      "market_value": 227,
+      "name_color": "D2D2D2",
+      "preview_id": null,
+      "price_is_unreliable": true,
+      "stickers": [
+        
+      ],
+      "wear": null,
+      "published_at": "2022-10-18T08:51:02.803761Z",
+      "id": 11204,
+      "depositor_stats": {
+        "delivery_rate_recent": 0.6,
+        "delivery_rate_long": 0.7567567567567568,
+        "delivery_time_minutes_recent": 7,
+        "delivery_time_minutes_long": 7,
+        "steam_level_min_range": 5,
+        "steam_level_max_range": 10,
+        "user_has_trade_notifications_enabled": false,
+        "user_is_online": null
+      },
+      "above_recommended_price": -5
+    }
+  ]
 }
 ```
 
@@ -487,21 +446,37 @@ Inputs:
     "current_page": 1,
     "data": [
         {
+            "id": 54773614,
             "key": "withdrawal_invoices",
-            "type": "Steam Auction Bid Withdrawal #0000",
-            "balance": 100,
-            "delta": 10,
-            "balance_after": 90,
-            "timestamp": 1650031638.85,
-            "timestamp_raw": 1650031638850,
-            "date": "2022-04-15 14:07:18",
-            "invoice_id": null
+            "type": "Steam Auction Bid Withdrawal",
+            "balance": 17543153,
+            "delta": -227,
+            "balance_after": 17542926,
+            "timestamp": 1666083061.355,
+            "timestamp_raw": 1666083061355,
+            "date": "2022-10-18 08:51:01",
+            "invoice_id": null,
+            "data": {
+                "id": 69,
+                "processor_name": "Steam",
+                "status": 200,
+                "status_name": "Created",
+                "metadata": {
+                    "deposit_id": 11204,
+                    "payment_method": "auction_bid",
+                    "id": 11204,
+                    "auction_highest_bid": 227,
+                    "auction_highest_bidder": 303119,
+                    "auction_number_of_bids": 1,
+                    "auction_ends_at": 1666083221
+                }
+            }
         }
     ],
     "first_page_url": "user/transactions?page=1",
     "from": 1,
-    "last_page": 2,
-    "last_page_url": "user/transactions?page=2",
+    "last_page": 2499,
+    "last_page_url": "user/transactions?page=2499",
     "links": [
         {
             "url": null,
@@ -564,13 +539,13 @@ Inputs:
             "active": false
         },
         {
-            "url": "user/transactions?page=669",
-            "label": "669",
+            "url": "user/transactions?page=2498",
+            "label": "2498",
             "active": false
         },
         {
-            "url": "user/transactions?page=670",
-            "label": "670",
+            "url": "user/transactions?page=2499",
+            "label": "2499",
             "active": false
         },
         {
@@ -581,10 +556,10 @@ Inputs:
     ],
     "next_page_url": "user/transactions?page=2",
     "path": "user/transactions",
-    "per_page": 20,
+    "per_page": 1,
     "prev_page_url": null,
-    "to": 20,
-    "total": 13386
+    "to": 1,
+    "total": 2499
 }
 ```
 
@@ -722,122 +697,58 @@ Inputs:
 <summary>Example Response:</summary>
  
 ```json
-  {
+{
     "success": true,
-    "updatedAt": 1638265100,
+    "updatedAt": 1666082810,
+    "allowUpdate": true,
     "data": [
         {
-            "app_id": 730,
-            "asset_id": 23441306297,
-            "context_id": 2,
+            "asset_id": 26876810352,
+            "created_at": "2022-10-14 13:54:35",
             "custom_price_percentage": null,
-            "customname": null,
-            "defindex": null,
-            "description_type": "Base Grade Tool",
-            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXX7gNTPcUxqAhWSVieErT9hpbQAF8ncFNU4O3xe15l1afJcjhHu4jlxNiPlqWiZLmIx28DvYthhO6K88GN3g",
-            "id": 3731677713,
-            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXX7gNTPcUxqAhWSVieErT9hpbQAF8ncFNU4O3xe15l1afJcjhHu4jlxNiPlqWiZLmIx28DvYthhO6K88GN3g",
-            "inspect_key": null,
-            "invalid": "This item's price is either unstable or not found. (3)",
-            "is_commodity": true,
-            "killeaterscoretype": null,
-            "killeatervalue": null,
-            "market_name": "Storage Unit",
-            "market_value": -1,
-            "name": "Storage Unit",
-            "name_color": "D2D2D2",
-            "origin": null,
-            "paint_index": null,
-            "paintindex": null,
-            "paintseed": null,
-            "paintwear": null,
-            "position": null,
-            "preview_id": null,
-            "price_is_unreliable": 0,
-            "quality": null,
-            "rarity": null,
-            "stickers": null,
-            "tradable": false,
-            "tradelock": false,
-            "type": "users",
-            "updated_at": "2021-11-30 10:27:59",
-            "wear": null
-        },
-        {
-            "app_id": 730,
-            "asset_id": 23569390085,
-            "context_id": 2,
-            "custom_price_percentage": null,
-            "customname": null,
-            "defindex": 500,
-            "description_type": "\u2605 Covert Knife",
-            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLu8JAllx8zJfAJH4dmklYyPqPr1Ibndk2JL7cFOhuDG_Zi72VDh8kduZW37JIeWJ1Q9Yl2G8gToxrrmhpfvtZ6YynI1siRw7HbVmwv330-du9HHOA",
-            "id": 3731677704,
-            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLu8JAllx8zJfAJH4dmklYyPqPr1Ibndk2JL7cFOhuDG_Zi72VDh8kduZW37JIeWJ1Q9Yl2G8gToxrrmhpfvtZ6YynI1siRw7HbVmwv330-du9HHOA",
-            "inspect_key": "14843909089252410308",
+            "full_position": 83,
+            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-DjsjwN6vQglRd4cJ5nqeQ89mk2VHg_UpkYjj0JdLGdAFvNAvS81G6kLjq1pHtv5SdnHdhuCYq-z-DyHWIya-0",
+            "id": 50755,
+            "invalid": "This item is currently in an active deposit.",
             "is_commodity": false,
-            "killeaterscoretype": null,
-            "killeatervalue": null,
-            "market_name": "\u2605 Bayonet | Gamma Doppler (Factory New) - Emerald",
-            "market_value": 576811,
-            "name": "\u2605 Bayonet | Gamma Doppler (Factory New) - Emerald",
+            "market_name": "★ M9 Bayonet | Forest DDPAT (Factory New)",
+            "market_value": 48882,
             "name_color": "8650AC",
-            "origin": 8,
-            "paint_index": 568,
-            "paintindex": 568,
-            "paintseed": 909,
-            "paintwear": 0.015505413524806,
             "position": null,
-            "preview_id": "c968216d0590",
+            "preview_id": "43246cdca7fe",
             "price_is_unreliable": 1,
-            "quality": 3,
-            "rarity": 6,
-            "stickers": "[]",
+            "stickers": [],
             "tradable": true,
             "tradelock": false,
-            "type": "users",
-            "updated_at": "2021-11-30 10:18:14",
-            "wear": 0.016
+            "updated_at": "2022-10-18 08:46:45",
+            "wear": 0.064
         },
         {
-            "app_id": 730,
-            "asset_id": 24053882249,
-            "context_id": 2,
+            "asset_id": 27299195480,
+            "created_at": "2022-10-14 13:54:34",
             "custom_price_percentage": null,
-            "customname": null,
-            "defindex": null,
-            "description_type": "Restricted Pistol",
-            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PDdTjlH7duJgJKCkPDxIYTVn3hS4dV9g-fEyoHwjF2hpl1uam-mcoeVIFNoYVGB_gTow7zqgsS1v5TJzHpq7HUrs3bZyxCwg0wdcKUx0iHm0tj7",
-            "id": 3732134688,
-            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PDdTjlH7duJgJKCkPDxIYTVn3hS4dV9g-fEyoHwjF2hpl1uam-mcoeVIFNoYVGB_gTow7zqgsS1v5TJzHpq7HUrs3bZyxCwg0wdcKUx0iHm0tj7",
-            "inspect_key": "9560840743796123239",
+            "full_position": 27,
+            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7uifDhnwMzFcDoV09ajh5SClPLLP7LWnn8f7sZ1ib6S9I6i3w21qUNlYDymI9KcclI3YAvRr1Ltwujm18TvtMnPzGwj5Hdb1VS4mQ",
+            "id": 50696,
             "is_commodity": false,
-            "killeaterscoretype": null,
-            "killeatervalue": null,
-            "market_name": "Desert Eagle | Trigger Discipline (Field-Tested)",
-            "market_value": 116,
-            "name": "Desert Eagle | Trigger Discipline (Field-Tested)",
-            "name_color": "D2D2D2",
-            "origin": null,
-            "paint_index": null,
-            "paintindex": null,
-            "paintseed": null,
-            "paintwear": null,
-            "position": null,
+            "market_name": "StatTrak™ MAG-7 | Justice (Factory New)",
+            "market_value": 3267,
+            "name_color": "CF6A32",
+            "position": 2,
             "preview_id": null,
             "price_is_unreliable": 0,
-            "quality": null,
-            "rarity": null,
-            "stickers": null,
-            "tradable": false,
-            "tradelock": {
-                "time_left_days": 7,
-                "time_left_hours": 21,
-                "timestamp": 1638950400
-            },
-            "type": "users",
-            "updated_at": "2021-11-30 10:27:29",
-            "wear": null
+            "stickers": [
+                {
+                    "sticker_id": 3453,
+                    "wear": null,
+                    "name": "Legendary Eagle Master (Holo)",
+                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROR0XcS-O_2NrDbF51NRdCur_qJwJt7PvHfTJ94N2kk4XFw_OhZbmAxWhT7Zcp3u2TpIqmilDl8hZsMjylJoHEIAA9ZQ2B-1W-xfCv28G5r0_B7Q"
+                }
+            ],
+            "tradable": true,
+            "tradelock": false,
+            "updated_at": "2022-10-18 08:46:45",
+            "wear": 0.068
         }
     ]
 }
@@ -873,65 +784,31 @@ Get inspected unique info for items in user inventory. Examples include float/st
 {
     "success": true,
     "data": [
+    {
+      "id": 50696,
+      "asset_id": 27299195480,
+      "wear": 0.068,
+      "stickers": [
         {
-            "id": 3731677705,
-            "asset_id": 23563048480,
-            "wear": 0.107,
-            "stickers": [
-                {
-                    "slot": 0,
-                    "sticker_id": 4650,
-                    "wear": null,
-                    "scale": null,
-                    "rotation": null,
-                    "tint_id": null,
-                    "name": "Hello AK-47 (Gold)",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPSU_fTuji1sSHBGJmIAdYv7aaLAhs18zEcC9F6ZK0kNOPwaH2YemAw2oIvcB107-X8Y_w2VC2qEpsZDv1IY-RJ1I-ZFiG5BHgljEvnINE"
-                },
-                {
-                    "slot": 1,
-                    "sticker_id": 4650,
-                    "wear": null,
-                    "scale": null,
-                    "rotation": null,
-                    "tint_id": null,
-                    "name": "Hello AK-47 (Gold)",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPSU_fTuji1sSHBGJmIAdYv7aaLAhs18zEcC9F6ZK0kNOPwaH2YemAw2oIvcB107-X8Y_w2VC2qEpsZDv1IY-RJ1I-ZFiG5BHgljEvnINE"
-                },
-                {
-                    "slot": 2,
-                    "sticker_id": 4650,
-                    "wear": null,
-                    "scale": null,
-                    "rotation": null,
-                    "tint_id": null,
-                    "name": "Hello AK-47 (Gold)",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPSU_fTuji1sSHBGJmIAdYv7aaLAhs18zEcC9F6ZK0kNOPwaH2YemAw2oIvcB107-X8Y_w2VC2qEpsZDv1IY-RJ1I-ZFiG5BHgljEvnINE"
-                },
-                {
-                    "slot": 3,
-                    "sticker_id": 4650,
-                    "wear": null,
-                    "scale": null,
-                    "rotation": null,
-                    "tint_id": null,
-                    "name": "Hello AK-47 (Gold)",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPSU_fTuji1sSHBGJmIAdYv7aaLAhs18zEcC9F6ZK0kNOPwaH2YemAw2oIvcB107-X8Y_w2VC2qEpsZDv1IY-RJ1I-ZFiG5BHgljEvnINE"
-                }
-            ]
-        },
-        {
-            "id": 3731677706,
-            "asset_id": 23562816060,
-            "wear": null,
-            "stickers": []
-        },
-        {
-            "id": 3731677707,
-            "asset_id": 23556911771,
-            "wear": 0.009,
-            "stickers": []
+          "slot": 0,
+          "sticker_id": 3453,
+          "wear": null,
+          "scale": null,
+          "rotation": null,
+          "tint_id": null,
+          "name": "Legendary Eagle Master (Holo)",
+          "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROR0XcS-O_2NrDbF51NRdCur_qJwJt7PvHfTJ94N2kk4XFw_OhZbmAxWhT7Zcp3u2TpIqmilDl8hZsMjylJoHEIAA9ZQ2B-1W-xfCv28G5r0_B7Q"
         }
+      ]
+    },
+    {
+      "id": 50697,
+      "asset_id": 27297587028,
+      "wear": 0.392,
+      "stickers": [
+        
+      ]
+    }
 }
 ```
 
@@ -996,7 +873,7 @@ item = {
     curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit' \
     --header 'Authorization: Bearer {API-KEY-HERE}' \
     --header 'Content-Type: application/json' \
-    --data-raw '{"items":[{"id":3731677704,"custom_price_percentage":32,"coin_value":576811}]}'
+    --data-raw '{"items":[{"id":50755,"coin_value":48882}]}'
 ```
 
 </details>
@@ -1005,38 +882,15 @@ item = {
 <summary>Example Response:</summary>
  
 ```json
-    {
+{
+    "success": true,
+    "deposits": {
         "success": true,
-        "deposits": {
-            "success": true,
-            "id": "28391470",
-            "item_id": 3731677704,
-            "invoice": {
-                "user_id": 303119,
-                "ip_address": "0.0.0.0",
-                "status": 200,
-                "processor_id": 3,
-                "currency_id": 4,
-                "amount": 761391,
-                "amount_coins": 761391,
-                "metadata": {
-                    "item_id": 3731677704,
-                    "custom_price_percentage": 32
-                },
-                "updated_at": 1638271689,
-                "created_at": 1638271688,
-                "id": 3885971,
-                "processor_ref": "28391470",
-                "processor_name": "Steam",
-                "provider_friendly_name": "Steam (P2P)",
-                "Method_friendly_name": null,
-                "status_name": "CREATED",
-                "currency_code": "STEAM_ITEMS",
-                "paid_at": null,
-                "refunded_at": null
-            }
-        }
-    }
+        "id": "11203",
+        "item_id": 50755
+    },
+    "pending": []
+}
 ```
 
 </details>
@@ -1065,9 +919,9 @@ Cancels processing deposit without any bids. Once a bid has been placed items ar
 <summary>Example Response:</summary>
  
 ```json
-    {
-        "success": true
-    }
+{
+    "success": true
+}
 ```
 
 </details>
@@ -1100,17 +954,17 @@ Inputs:
 <summary>Example Response:</summary>
  
 ```json
-    {
-        "success": true,
-        "auction_data": {
-            "id": 28393316,
-            "app_id": 730,
-            "auction_highest_bid": 54,
-            "auction_highest_bidder": 2700170,
-            "auction_number_of_bids": 2,
-            "auction_ends_at": 1638273900
-        }
+{
+    "success": true,
+    "auction_data": {
+        "id": 28393316,
+        "app_id": 730,
+        "auction_highest_bid": 54,
+        "auction_highest_bidder": 2700170,
+        "auction_number_of_bids": 2,
+        "auction_ends_at": 1638273900
     }
+}
 ```
 
 </details>
@@ -1163,331 +1017,67 @@ Ratelimit:
 <summary>Example Response:</summary>
  
 ```json
-    {
-        "current_page": 1,
-        "data": [
-            {
-                "app_id": 730,
-                "auction_auto_withdraw_failed": null,
-                "auction_ends_at": 1638207128,
-                "auction_highest_bid": null,
-                "auction_highest_bidder": null,
-                "auction_number_of_bids": 0,
-                "custom_name": null,
-                "custom_price_percentage": 20,
-                "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f65Mli7DH9tXziQTgqUY4YmmnINSUJwQ-YVnT_wS7yOzngMW07ZrOmmwj5HeObpQQtA",
-                "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f65Mli7DH9tXziQTgqUY4YmmnINSUJwQ-YVnT_wS7yOzngMW07ZrOmmwj5HeObpQQtA",
-                "inspect_details": {
-                    "defindex": 16,
-                    "paintindex": 309,
-                    "rarity": 7,
-                    "quality": 9,
-                    "paintwear": 0.04290539771318436,
-                    "paintseed": 606,
-                    "killeaterscoretype": 0,
-                    "killeatervalue": 13,
-                    "customname": null,
-                    "stickers": [
-                        {
-                            "slot": 0,
-                            "sticker_id": 4691,
-                            "wear": null,
-                            "scale": null,
-                            "rotation": null,
-                            "tint_id": null,
-                            "name": "Battle Scarred (Holo)",
-                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
-                        },
-                        {
-                            "slot": 1,
-                            "sticker_id": 4691,
-                            "wear": null,
-                            "scale": null,
-                            "rotation": null,
-                            "tint_id": null,
-                            "name": "Battle Scarred (Holo)",
-                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
-                        },
-                        {
-                            "slot": 2,
-                            "sticker_id": 4691,
-                            "wear": null,
-                            "scale": null,
-                            "rotation": null,
-                            "tint_id": null,
-                            "name": "Battle Scarred (Holo)",
-                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
-                        },
-                        {
-                            "slot": 3,
-                            "sticker_id": 4691,
-                            "wear": null,
-                            "scale": null,
-                            "rotation": null,
-                            "tint_id": null,
-                            "name": "Battle Scarred (Holo)",
-                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
-                        }
-                    ],
-                    "origin": 8,
-                    "created_at": "2021-11-15 08:35:17",
-                    "updated_at": "2021-11-21 13:47:44"
-                },
-                "is_commodity": false,
-                "market_name": "StatTrak™ M4A4 | Howl (Factory New)",
-                "market_value": 2473202,
-                "name": "StatTrak™ M4A4 | Howl (Factory New)",
-                "name_color": "CF6A32",
-                "paint_index": 309,
-                "paint_seed": 606,
-                "preview_id": "3a3717b91cb5",
-                "price_is_unreliable": true,
-                "stickers": [
-                    {
-                        "slot": 0,
-                        "sticker_id": 4691,
-                        "wear": null,
-                        "scale": null,
-                        "rotation": null,
-                        "tint_id": null,
-                        "name": "Battle Scarred (Holo)",
-                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
-                    },
-                    {
-                        "slot": 1,
-                        "sticker_id": 4691,
-                        "wear": null,
-                        "scale": null,
-                        "rotation": null,
-                        "tint_id": null,
-                        "name": "Battle Scarred (Holo)",
-                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
-                    },
-                    {
-                        "slot": 2,
-                        "sticker_id": 4691,
-                        "wear": null,
-                        "scale": null,
-                        "rotation": null,
-                        "tint_id": null,
-                        "name": "Battle Scarred (Holo)",
-                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
-                    },
-                    {
-                        "slot": 3,
-                        "sticker_id": 4691,
-                        "wear": null,
-                        "scale": null,
-                        "rotation": null,
-                        "tint_id": null,
-                        "name": "Battle Scarred (Holo)",
-                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfXkPbQuqS0c7dVBJ2JBBDur-aOARhweHNdQJK49C5q4yKhfDxfbiGwzsCupdy3LrE84-ijA3n_kdrYjv7doWRJlc7Zl2Dq1e8wO7ug5Si_MOeoh93ilM"
-                    }
-                ],
-                "tradable": true,
-                "tradelock": false,
-                "updated_at": "2021-11-30 11:56:31",
-                "wear": 0.043,
-                "published_at": "2021-11-30T12:11:23.938614Z",
-                "id": 28360811
+{
+    "current_page": 1,
+    "data": [
+        {
+            "auction_ends_at": 1665762091,
+            "auction_highest_bid": null,
+            "auction_highest_bidder": null,
+            "auction_number_of_bids": 0,
+            "custom_price_percentage": 0,
+            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhnwMzFJQJE4NOhkZKYqPrxN7LEmyVQ7JMkieiTp92sjAzs_hc4Nm_7LdCcdQdrNVrU_gK6xOnt0MO4tZvP1zI97XHPMlL3",
+            "is_commodity": false,
+            "market_name": "StatTrak™ M4A4 | Spider Lily (Well-Worn)",
+            "market_value": 240,
+            "name_color": "CF6A32",
+            "preview_id": "3d33db497b7b",
+            "price_is_unreliable": false,
+            "stickers": [],
+            "wear": 0.431,
+            "published_at": "2022-10-14T15:38:33.947439Z",
+            "id": 11196,
+            "depositor_stats": {
+                "delivery_rate_recent": 1,
+                "delivery_rate_long": 0.9565217391304348,
+                "delivery_time_minutes_recent": 2,
+                "delivery_time_minutes_long": 3,
+                "steam_level_min_range": 5,
+                "steam_level_max_range": 10,
+                "user_has_trade_notifications_enabled": false,
+                "user_is_online": null
             },
-            {
-                "app_id": 730,
-                "auction_auto_withdraw_failed": null,
-                "auction_ends_at": 1638037717,
-                "auction_highest_bid": null,
-                "auction_highest_bidder": null,
-                "auction_number_of_bids": 0,
-                "custom_name": null,
-                "custom_price_percentage": 15,
-                "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f65Mli7DH9tXziQTgqUY4YmmnINSUJwQ-YVnT_wS7yOzngMW07ZrOmmwj5HeObpQQtA",
-                "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwT09S5g4yCmfDLP7LWnn8f65Mli7DH9tXziQTgqUY4YmmnINSUJwQ-YVnT_wS7yOzngMW07ZrOmmwj5HeObpQQtA",
-                "inspect_details": {
-                    "defindex": 16,
-                    "paintindex": 309,
-                    "rarity": 7,
-                    "quality": 9,
-                    "paintwear": 0.03958660364151,
-                    "paintseed": 205,
-                    "killeaterscoretype": 0,
-                    "killeatervalue": 18523,
-                    "customname": null,
-                    "stickers": [
-                        {
-                            "slot": 3,
-                            "sticker_id": 3717,
-                            "wear": 0.7717340588569641,
-                            "scale": null,
-                            "rotation": null,
-                            "tint_id": null,
-                            "name": "yuurih | Katowice 2019",
-                            "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRWTVjfUO2u0p2DAgQ7Ng1QiaOwPhVp28zEcC9F6ZLnxILfk6ajN--Jwz0B7sQgjrrEotys31W3qUBpZz2gcdeQJw5qYA6B5BHglsl2pShJ"
-                        }
-                    ],
-                    "origin": 8,
-                    "created_at": "2021-11-27 18:18:35",
-                    "updated_at": "2021-11-27 18:18:35"
-                },
-                "is_commodity": false,
-                "market_name": "StatTrak™ M4A4 | Howl (Factory New)",
-                "market_value": 2368054,
-                "name": "StatTrak™ M4A4 | Howl (Factory New)",
-                "name_color": "CF6A32",
-                "paint_index": 309,
-                "paint_seed": 205,
-                "preview_id": "69161b71e1a2",
-                "price_is_unreliable": true,
-                "stickers": [
-                    {
-                        "slot": 3,
-                        "sticker_id": 3717,
-                        "wear": 0.7717340588569641,
-                        "scale": null,
-                        "rotation": null,
-                        "tint_id": null,
-                        "name": "yuurih | Katowice 2019",
-                        "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRWTVjfUO2u0p2DAgQ7Ng1QiaOwPhVp28zEcC9F6ZLnxILfk6ajN--Jwz0B7sQgjrrEotys31W3qUBpZz2gcdeQJw5qYA6B5BHglsl2pShJ"
-                    }
-                ],
-                "tradable": true,
-                "tradelock": false,
-                "updated_at": "2021-11-30 11:56:31",
-                "wear": 0.04,
-                "published_at": "2021-11-30T12:10:48.413542Z",
-                "id": 28276894
-            },
-            {
-                "app_id": 730,
-                "auction_auto_withdraw_failed": null,
-                "auction_ends_at": 1636542106,
-                "auction_highest_bid": null,
-                "auction_highest_bidder": null,
-                "auction_number_of_bids": 0,
-                "custom_name": null,
-                "custom_price_percentage": 21,
-                "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqOT1I6vZn3lU18hwmOvN8IXvjVCLqSwwOj6rYJiRdg42NAuE-lW5kri5hpbuvM7AzHtmsnMh4imPzUa3gB4aaOw9hfCeVxzAUJ5TOTzr",
-                "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqOT1I6vZn3lU18hwmOvN8IXvjVCLqSwwOj6rYJiRdg42NAuE-lW5kri5hpbuvM7AzHtmsnMh4imPzUa3gB4aaOw9hfCeVxzAUJ5TOTzr",
-                "inspect_details": {
-                    "defindex": 515,
-                    "paintindex": 619,
-                    "rarity": 6,
-                    "quality": 3,
-                    "paintwear": 0.01931234635412693,
-                    "paintseed": 921,
-                    "killeaterscoretype": null,
-                    "killeatervalue": null,
-                    "customname": null,
-                    "stickers": [],
-                    "origin": 8,
-                    "created_at": "2021-09-21 16:04:40",
-                    "updated_at": "2021-10-14 03:08:10"
-                },
-                "is_commodity": false,
-                "market_name": "★ Butterfly Knife | Doppler (Factory New) - Sapphire",
-                "market_value": 2154762,
-                "name": "★ Butterfly Knife | Doppler (Factory New) - Sapphire",
-                "name_color": "8650AC",
-                "paint_index": 619,
-                "paint_seed": 921,
-                "preview_id": "5ffcadd62470",
-                "price_is_unreliable": true,
-                "stickers": [],
-                "tradable": true,
-                "tradelock": false,
-                "updated_at": "2021-11-30 12:10:55",
-                "wear": 0.019,
-                "published_at": "2021-11-30T12:11:18.024068Z",
-                "id": 27596342
-            }
-        ],
-        "first_page_url": "http://csgoempire.com/api/api/trading/items?page=1",
-        "from": 1,
-        "last_page": 5027,
-        "last_page_url": "http://csgoempire.com/api/api/trading/items?page=5027",
-        "links": [
-            {
-                "url": null,
-                "label": "&laquo; Previous",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=1",
-                "label": "1",
-                "active": true
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=2",
-                "label": "2",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=3",
-                "label": "3",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=4",
-                "label": "4",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=5",
-                "label": "5",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=6",
-                "label": "6",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=7",
-                "label": "7",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=8",
-                "label": "8",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=9",
-                "label": "9",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=10",
-                "label": "10",
-                "active": false
-            },
-            {
-                "url": null,
-                "label": "...",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=5026",
-                "label": "5026",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=5027",
-                "label": "5027",
-                "active": false
-            },
-            {
-                "url": "http://csgoempire.com/api/api/trading/items?page=2",
-                "label": "Next &raquo;",
-                "active": false
-            }
-        ],
-        "next_page_url": "http://csgoempire.com/api/api/trading/items?page=2",
-        "path": "http://csgoempire.com/api/api/trading/items",
-        "per_page": "3",
-        "prev_page_url": null,
-        "to": 3,
-        "total": 15079
-    }
+            "above_recommended_price": -6
+        }
+    ],
+    "first_page_url": "http://staging.csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http://staging.csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "http://staging.csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "http://staging.csgoempire.com/api/trading/items",
+    "per_page": "10",
+    "prev_page_url": null,
+    "to": 1,
+    "total": 1
+}
 ```
 
 </details>
@@ -1520,16 +1110,16 @@ Inputs:
 <summary>Example Response:</summary>
  
 ```json
-    {
-        "delivery_rate_recent": 1,
-        "delivery_rate_long": 1,
-        "delivery_time_minutes_recent": null,
-        "delivery_time_minutes_long": null,
-        "steam_level_min_range": 100,
-        "steam_level_max_range": 5000,
-        "user_has_trade_notifications_enabled": false,
-        "user_is_online": null
-    }
+{
+    "delivery_rate_recent": 1,
+    "delivery_rate_long": 1,
+    "delivery_time_minutes_recent": null,
+    "delivery_time_minutes_long": null,
+    "steam_level_min_range": 100,
+    "steam_level_max_range": 5000,
+    "user_has_trade_notifications_enabled": false,
+    "user_is_online": null
+}
 ```
 
 </details>
