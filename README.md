@@ -1050,10 +1050,10 @@ Ratelimit:
             "above_recommended_price": -6
         }
     ],
-    "first_page_url": "http://staging.csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
+    "first_page_url": "http://csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
     "from": 1,
     "last_page": 1,
-    "last_page_url": "http://staging.csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
+    "last_page_url": "http://csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
     "links": [
         {
             "url": null,
@@ -1061,7 +1061,7 @@ Ratelimit:
             "active": false
         },
         {
-            "url": "http://staging.csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
+            "url": "http://csgoempire.com/api/trading/items?per_page=10&price_max_above=15&sort=desc&order=market_value&page=1",
             "label": "1",
             "active": true
         },
@@ -1072,7 +1072,7 @@ Ratelimit:
         }
     ],
     "next_page_url": null,
-    "path": "http://staging.csgoempire.com/api/trading/items",
+    "path": "http://csgoempire.com/api/trading/items",
     "per_page": "10",
     "prev_page_url": null,
     "to": 1,
