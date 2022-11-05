@@ -1460,9 +1460,30 @@ This returns the following:
 
 </details>
  
+After you're identified you'll want to submit the default filters to subscribe to item updates. **Without this being emitted, item updates will not be sent to you.**
+
+To do this, emit the following:
+
+
+<details>
+<summary>Filters:</summary>
+
+```json
+{
+    "price_max": 9999999
+}
+```
+</details>
+
+
+In most languages, this will look something like `emit('filters', {'price_max': 9999999});`.
+
+
 [[Back to contents](#contents)]
 
 ## Websocket Events
+
+All websocket events can be either a single item OR an array containing multiple items.
 
 ## timesync
 
@@ -1487,35 +1508,124 @@ Emitted when a new item is available.
 <summary>Event sample:</summary>
 
 ```json
-42 / trade, ["new_item", {
-    "app_id": 730,
-    "auction_auto_withdraw_failed": null,
-    "auction_ends_at": 1631921311,
-    "auction_highest_bid": null,
-    "auction_highest_bidder": null,
-    "auction_number_of_bids": 0,
-    "custom_name": null,
-    "description_type": "Souvenir Mil-Spec Grade SMG",
-    "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6r8FAZu7OHNdQJO5du-gM7bwqb2MeuClTsCv8Ek2LiZ9t2giwa28hVlZGD0doSUIANqYV_U_gC2366x0j0WoURS",
-    "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6r8FAZu7OHNdQJO5du-gM7bwqb2MeuClTsCv8Ek2LiZ9t2giwa28hVlZGD0doSUIANqYV_U_gC2366x0j0WoURS",
-    "is_commodity": false,
-    "market_name": "Souvenir MP9 | Hot Rod (Factory New)",
-    "market_value": 3394,
-    "name": "Souvenir MP9 | Hot Rod (Factory New)",
-    "name_color": "FFD700",
-    "paint_index": null,
-    "paint_seed": null,
-    "preview_id": null,
-    "price_is_unreliable": 0,
-    "stickers": [],
-    "tradable": true,
-    "tradelock": false,
-    "updated_at": "2021-09-17 23:15:33",
-    "wear": null,
-    "published_at": "2021-09-17T23:25:31.111700Z",
-    "id": 10003,
-}]
-
+42/trade,
+[
+    "new_item",
+    [
+        {
+            "auction_ends_at": 1667634833,
+            "auction_highest_bid": null,
+            "auction_highest_bidder": null,
+            "auction_number_of_bids": 0,
+            "custom_price_percentage": 15,
+            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopamie19f0Ob3Yi5FvISJkJKKkPj6NbLDk1RC68phj9bN_Iv9nBrg80FkZmGgLdKVeg46ZFyC_lPrxO25hZTotZ_OmHphuiNx43aJyUa1n1gSOaKu3f6c",
+            "is_commodity": false,
+            "market_name": "SSG 08 | Dragonfire (Factory New)",
+            "market_value": 2735,
+            "name_color": "D2D2D2",
+            "preview_id": "314f2ed36b33",
+            "price_is_unreliable": false,
+            "stickers": [],
+            "wear": 0.05,
+            "published_at": "2022-11-05T07:50:54.575295Z",
+            "id": 92048513,
+            "depositor_stats": {
+                "delivery_rate_recent": 1,
+                "delivery_rate_long": 1,
+                "delivery_time_minutes_recent": 3,
+                "delivery_time_minutes_long": 29,
+                "steam_level_min_range": 21,
+                "steam_level_max_range": 40,
+                "user_has_trade_notifications_enabled": true,
+                "user_is_online": null
+            },
+            "above_recommended_price": 9
+        },
+        {
+            "auction_ends_at": 1667634834,
+            "auction_highest_bid": null,
+            "auction_highest_bidder": null,
+            "auction_number_of_bids": 0,
+            "custom_price_percentage": -3,
+            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5k5SDnvnzIITck29Y_cg_i-rHoYrw3VLs_RZlZ2umLYSTdQc_Zl7ZrwPoxefp18Du7Z-bwHZh6z5iuyiJTfqMXg",
+            "is_commodity": false,
+            "market_name": "AK-47 | Ice Coaled (Field-Tested)",
+            "market_value": 2849,
+            "name_color": "D2D2D2",
+            "preview_id": "2b26bb4fd4d2",
+            "price_is_unreliable": false,
+            "stickers": [
+                {
+                    "sticker_id": 5283,
+                    "wear": null,
+                    "name": "Cloud9 | Antwerp 2022",
+                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRcQljHQva9hZ-BARJ3fDtbt6iiLklkhaaQc25D7Ym3l4baxKSsauvUlzgHv8cm27mUotWh3Abh-hc_Z2umOsbLJassj6yL"
+                },
+                {
+                    "sticker_id": 4925,
+                    "wear": null,
+                    "name": "Great Wave",
+                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRSXHPCTvS53svWHFpmIAVDia2kPQJfw_LYdC994N2kk4XFlKetZb-FlzhUu5Aj3bmUrImj3lay-Bc9Nzv7LIKUIVA8YVjX_Vnox_Cv28FYyXBDZA"
+                },
+                {
+                    "sticker_id": 3945,
+                    "wear": null,
+                    "name": "Baited",
+                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRbSV7RS9u9xcrXUkl7NxcYtLusPwJk7PTEfi5R9eO6lZKMkrn3ar2BlDxU7JUo3L7ErImh3gy1qhVla277ddLBdQc7NA3T8wXvxOu-m9bi6woR5I7k"
+                },
+                {
+                    "sticker_id": 5898,
+                    "wear": null,
+                    "name": "Baby Cerberus",
+                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReX0vfFrTi1c7RSmJ3IBZVs6iwODhw0uPNYwJO7c6xkc6IxfT3ZOiJwThX7ZR12L-W8dWm3gGyrxA4Zmr3I9PGdwM4aAnS-VDs366x0lpBDHM_"
+                }
+            ],
+            "wear": 0.193,
+            "published_at": "2022-11-05T07:50:54.712228Z",
+            "id": 92048515,
+            "depositor_stats": {
+                "delivery_rate_recent": 1,
+                "delivery_rate_long": 0.9852941176470589,
+                "delivery_time_minutes_recent": 1,
+                "delivery_time_minutes_long": 1,
+                "steam_level_min_range": 5,
+                "steam_level_max_range": 10,
+                "user_has_trade_notifications_enabled": true,
+                "user_is_online": null
+            },
+            "above_recommended_price": -9
+        },
+        {
+            "auction_ends_at": 1667634833,
+            "auction_highest_bid": null,
+            "auction_highest_bidder": null,
+            "auction_number_of_bids": 0,
+            "custom_price_percentage": 6,
+            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAQ1JmMR1osbaqPQJz7ODYfi9W9eO-m5WFk-TgPLTFnlRD7cFOh-zF_Jn4xg3srUtuZW-iJIDEI1BvZ13UqVm_xurq08Pt6J2cmCYy7yhz5infmECpwUYb3NOh42I",
+            "is_commodity": false,
+            "market_name": "★ Sport Gloves | Scarlet Shamagh (Field-Tested)",
+            "market_value": 43003,
+            "name_color": "8650AC",
+            "preview_id": null,
+            "price_is_unreliable": false,
+            "stickers": [],
+            "wear": 0.354,
+            "published_at": "2022-11-05T07:50:54.867698Z",
+            "id": 92048514,
+            "depositor_stats": {
+                "delivery_rate_recent": 1,
+                "delivery_rate_long": 0.99,
+                "delivery_time_minutes_recent": 5,
+                "delivery_time_minutes_long": 9,
+                "steam_level_min_range": 61,
+                "steam_level_max_range": 99,
+                "user_has_trade_notifications_enabled": true,
+                "user_is_online": null
+            },
+            "above_recommended_price": 0
+        }
+    ]
+]
 ```
 
 </details>
@@ -1573,15 +1683,25 @@ Emitted when someone places a bid for an auction item.
 <summary>Event sample:</summary>
 
 ```json
-42 / trade, ["auction_update",
-   {
-      "id":28980321,
-      "app_id":730,
-      "auction_highest_bid":450,
-      "auction_highest_bidder":6210766,
-      "auction_number_of_bids":5,
-      "auction_ends_at":1639407410
-   }
+42/trade,
+[
+   "auction_update",
+   [
+      {
+         "id":12345,
+         "auction_highest_bid":1234,
+         "auction_highest_bidder":123456,
+         "auction_number_of_bids":1,
+         "auction_ends_at":166763000
+      },
+      {
+         "id":54321,
+         "auction_highest_bid":1234,
+         "auction_highest_bidder":123456,
+         "auction_number_of_bids":1,
+         "auction_ends_at":166763000
+      }
+   ]
 ]
 
 ```
@@ -1592,13 +1712,25 @@ Emitted when someone places a bid for an auction item.
 
 ## deleted_item
 
-Emitted when the item is not anymore available for withdrawing. Eg. the auction ends and the winner withdraws it. Contains an array of ids. Currently always just one id but may be more in future.
+Emitted when the item is not anymore available for withdrawing. Eg. the auction ends and the winner withdraws it. Contains an array of ids.
 
 <details>
 <summary>Event sample:</summary>
 
 ```json
-42/trade,["deleted_item",[10003]]
+42/trade,
+[
+   "deleted_item",
+   [
+      91997374,
+      92044606,
+      92019018,
+      92044607,
+      91997376,
+      92044608,
+      91997377
+   ]
+]
 ```
 
 </details>
