@@ -51,6 +51,11 @@ async function initSocket() {
             socket.on('init', (data) => {
                 if (data && data.authenticated) {
                     console.log(`Successfully authenticated as ${data.name}`);
+                    
+                    // Emit the default filters to ensure we receive events
+                    socket.emit('filters', {
+                        price_max': 9999999
+                    }
                 }
             })
 
