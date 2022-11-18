@@ -1137,13 +1137,16 @@ Withdraw item directly if the auction has expired without being won.
 Inputs:
 
 - deposit_id (required) : integer - Required in the URL
+- coin_value (required) : integer - The item price.
 
 <details>
 <summary>Example Request:</summary>
 
 ```bash
-    curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28387732/withdraw' \
-    --header 'Authorization: Bearer {API-KEY-HERE}'
+    curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/28396506/withdraw' \
+    --header 'Authorization: Bearer {API-KEY-HERE}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{"coin_value":64}'
 ```
 
 </details>
