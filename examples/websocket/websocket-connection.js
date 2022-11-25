@@ -39,18 +39,24 @@ async function initSocket() {
             // Log when connected
             console.log(`Connected to websocket`);
 
-            // Emit the data we got earlier to the socket to identify this client as the user
-            socket.emit('identify', {
-                uid: userData.user.id,
-                model: userData.user,
-                authorizationToken: userData.socket_token,
-                signature: userData.socket_signature
-            });
-
             // Handle the Init event
             socket.on('init', (data) => {
                 if (data && data.authenticated) {
                     console.log(`Successfully authenticated as ${data.name}`);
+                    
+                    // Emit the default filters to ensure we receive events
+                    socket.emit('filters', {
+                        price_max: 9999999
+                    });
+                    
+                } else {
+                    // When the server asks for it, emit the data we got earlier to the socket to identify this client as the user
+                    socket.emit('identify', {
+                        uid: userData.user.id,
+                        model: userData.user,
+                        authorizationToken: userData.socket_token,
+                        signature: userData.socket_signature
+                    });
                 }
             })
 
