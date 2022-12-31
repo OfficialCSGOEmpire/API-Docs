@@ -25,6 +25,7 @@
   - [Get Unique Info](#get-unique-info)
   - [Create Deposit](#create-deposit)
   - [Cancel Deposit](#cancel-deposit)
+  - [Cancel Multiple Deposit](#cancel-multiple-deposit)
   - [Sell Now](#sell-now)
 - [Withdraw](#withdraw)
   - [Get Listed Items](#get-listed-items)
@@ -993,6 +994,54 @@ Cancels processing deposit without any bids. Once a bid has been placed items ar
 ```json
 {
     "success": true
+}
+```
+
+</details>
+ 
+<details>
+<summary>Ratelimit</summary>
+
+Success: Global ratelimit
+Error: 20 requests per 10 seconds, block for 1 minute.
+</details>
+
+[[Back to contents](#contents)]
+
+## Cancel Multiple Deposit
+
+URL: https://csgoempire.com/api/v2/trading/deposit/cancel
+
+Method: POST
+
+Cancels processing multiple deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
+    curl --location --request GET 'https://csgoempire.com/api/v2/trading/deposit/cancel' \
+    --header 'Authorization: Bearer {API-KEY-HERE}' \
+    --data-raw '{"ids":[10001, 10002, 10003, 10004, 10005]}'
+```
+
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
+{
+  "success": true,
+  "data": {
+    "pending_cancel": [
+      10001,
+      10002,
+      10003,
+      10004,
+      10005
+    ]
+  }
 }
 ```
 
