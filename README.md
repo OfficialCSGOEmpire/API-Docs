@@ -25,7 +25,7 @@
   - [Get Unique Info](#get-unique-info)
   - [Create Deposit](#create-deposit)
   - [Cancel Deposit](#cancel-deposit)
-  - [Cancel Multiple Deposit](#cancel-multiple-deposit)
+  - [Cancel Multiple Deposits](#cancel-multiple-deposits)
   - [Sell Now](#sell-now)
 - [Withdraw](#withdraw)
   - [Get Listed Items](#get-listed-items)
@@ -1008,7 +1008,7 @@ Error: 20 requests per 10 seconds, block for 1 minute.
 
 [[Back to contents](#contents)]
 
-## Cancel Multiple Deposit
+## Cancel Multiple Deposits
 
 URL: https://csgoempire.com/api/v2/trading/deposit/cancel
 
