@@ -1032,17 +1032,16 @@ Cancels processing multiple deposit without any bids. Once a bid has been placed
  
 ```json
 {
-  "success": true,
-  "data": {
-    "pending_cancel": [
-      10001,
-      10002,
-      10003,
-      10004,
-      10005
-    ]
-  }
+    "success": true,
+    "data": {
+        "10001": {"success":false,"message":"You don't have a cancellable deposit."},
+        "10002": {"success":true},
+        "10003": {"success":true},
+        "10004": {"success":true},
+        "10005": {"success":false,"message":"You don't have a cancellable deposit."}
+    }
 }
+
 ```
 
 </details>
