@@ -1020,7 +1020,7 @@ Cancels processing multiple deposit without any bids. Once a bid has been placed
 <summary>Example Request:</summary>
 
 ```bash
-    curl --location --request GET 'https://csgoempire.com/api/v2/trading/deposit/cancel' \
+    curl --location --request POST 'https://csgoempire.com/api/v2/trading/deposit/cancel' \
     --header 'Authorization: Bearer {API-KEY-HERE}' \
     --data-raw '{"ids":[10001, 10002, 10003, 10004, 10005]}'
 ```
