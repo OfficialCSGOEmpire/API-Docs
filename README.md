@@ -1016,6 +1016,9 @@ Method: POST
 
 Cancels processing multiple deposit without any bids. Once a bid has been placed items are no longer eligible to be cancelled.
 
+Inputs:
+
+- Array of deposits ids (required) : integer
 <details>
 <summary>Example Request:</summary>
 
