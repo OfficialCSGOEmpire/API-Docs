@@ -42,6 +42,7 @@
   - [auction\_update](#auction_update)
   - [deleted\_item](#deleted_item)
   - [trade\_status](#trade_status)
+  - [deposit\_failed](#deposit_failed)
 
 # Getting started
 
@@ -900,6 +901,7 @@ Notes:
 * coin_value should be the price you want to list at. If you want to list at 100.01 coins, you should set coin_value to 10001. See below for how to calculate the coin value.
 * the frontend works differently, use how these docs suggest, the requests are smaller and therefore faster than the frontend.
 * you *should* be chunking these requests into groups of 20, but it's not required. If you don't chunk, you'll list slower and hit ratelimits more often.
+* Individual deposit state's will be announced to the websocket, so monitor that to see when your items are listed. Errors will use the key `deposit_failed` and will contain the item id and error message.
   
 Pricing example:
 ```python
@@ -950,13 +952,7 @@ item = {
  
 ```json
 {
-    "success": true,
-    "deposits": {
-        "success": true,
-        "id": "11203",
-        "item_id": 50755
-    },
-    "pending": []
+    "success": true
 }
 ```
 
@@ -1964,6 +1960,38 @@ Emitted when the trade status gets updated.
         "updated_at": "2021-09-10 09:32:33"
     }
 }]
+
+```
+
+</details>
+ 
+[[Back to contents](#contents)]
+
+## deposit_failed
+
+Emitted when a deposit fails
+
+<details>
+<summary>Event sample:</summary>
+
+```json
+42/trade,
+[
+  "deposit_failed",
+  [
+    {
+      "response": {
+        "data": {
+          "success": false,
+          "message": "\"Sticker | device (Gold) | Boston 2018\" (ID 3517043328) already exists in another deposit by you. Please select a different item.",
+          "error_key": "item_already_deposited",
+          "item_id": 30013g
+        },
+        "status": 400,
+        "statusText": "Bad Request"
+      }
+    }
+]
 
 ```
 
