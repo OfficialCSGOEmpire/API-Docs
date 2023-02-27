@@ -1,4 +1,4 @@
-# CSGOEmpire API Key Documentation
+# CSGOEmpire API Documentation
 
 # Contents
 
