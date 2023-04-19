@@ -32,6 +32,7 @@
   - [Get Depositor Stats](#get-depositor-stats)
   - [Create Withdrawal](#create-withdrawal)
   - [Place Bid](#place-bid)
+  - [Cancel Withdrawal](#cancel-withdrawal)
 - [Websocket](#websocket)
   - [Connect To Websocket](#connect-to-websocket)
   - [Websocket Authentication](#websocket-authentication)
@@ -1519,6 +1520,46 @@ Failure: 20 per 10 seconds, block for 1 minute
 
 [[Back to contents](#contents)]
 
+
+## Cancel Withdrawal
+
+URL: https://csgoempire.com/api/trading/user/withdrawals/{WITHDRAWAL_ID}
+
+Method: DELETE
+
+Cancel a withdrawal if unsent and past the 30 minute mark.
+
+<details>
+<summary>Example Request:</summary>
+
+```bash
+    curl --location --request DELETE 'https://csgoempire.com/api/trading/user/withdrawals/12345' \
+    --header 'Authorization: Bearer {API-KEY-HERE}' \
+    --header 'Content-Type: application/json'
+```
+
+</details>
+ 
+<details>
+<summary>Example Response:</summary>
+ 
+```json
+    {
+        "success": true
+    }
+```
+
+</details>
+ 
+<details>
+<summary>Ratelimit</summary>
+
+No specific ratelimit, global ratelimit of 120 requests per 10 seconds applies.
+
+</details>
+
+[[Back to contents](#contents)]
+
 # Websocket
 
 ## Connect To Websocket
@@ -1985,7 +2026,7 @@ Emitted when a deposit fails
           "success": false,
           "message": "\"Sticker | device (Gold) | Boston 2018\" (ID 3517043328) already exists in another deposit by you. Please select a different item.",
           "error_key": "item_already_deposited",
-          "item_id": 30013g
+          "item_id": 30013
         },
         "status": 400,
         "statusText": "Bad Request"
