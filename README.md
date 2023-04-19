@@ -1,4 +1,4 @@
-# CSGOEmpire API Key Documentation
+# CSGOEmpire API Documentation
 
 # Contents
 
@@ -74,7 +74,7 @@ If you have something you think should be added here, please [open an issue](htt
 ## Links
 
 - [Antal's Deposit Bot](https://github.com/antal-k/csgoempire-deposit) by [@antal-k](https://github.com/antal-k) - Automated deposit bot for CSGOEmpire
-- [Pricempire](https://pricempire.com?utm_source=csgoempire_github) - Price comparison website for most CSGO marketplaces
+- [Pricempire](https://pricempire.com/?r=76561198106192114) - Price comparison website for most CSGO marketplaces
 
 
 
