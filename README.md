@@ -2,7 +2,7 @@
 
 # Contents
 
-- [CSGOEmpire API Key Documentation](#csgoempire-api-key-documentation)
+- [CSGOEmpire API Documentation](#csgoempire-api-documentation)
 - [Contents](#contents)
 - [Getting started](#getting-started)
 - [API Keys](#api-keys)
@@ -1600,7 +1600,6 @@ This returns the following:
 <summary>Example Response:</summary>
 
 ```json
-42/trade,
 [
    "init",
    {
@@ -1694,7 +1693,7 @@ Syncing server timestamp. It is not emitted unless the client asks it by sending
 <summary>Event sample:</summary>
 
 ```json
-  42/trade,["timesync",1619682261540]
+  ["timesync",1619682261540]
 ```
 
 </details>
@@ -1709,123 +1708,138 @@ Emitted when a new item is available.
 <summary>Event sample:</summary>
 
 ```json
-42/trade,
 [
-    "new_item",
-    [
+  "new_item",
+  [
+    {
+      "auction_ends_at": 1682284226,
+      "auction_highest_bid": null,
+      "auction_highest_bidder": null,
+      "auction_number_of_bids": 0,
+      "custom_price_percentage": 197,
+      "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PLFTj9Q49Kskb-Yh_bmOLfUqWdY781lxL2T8Y-kjAa2qhZlNmz7ItCSd1I4ZVrVrFi6kO_mgJa9uJXAyHdguXI8pSGKoKTrgPA",
+      "is_commodity": false,
+      "market_name": "Desert Eagle | Bronze Deco (Factory New)",
+      "market_value": 353,
+      "name_color": "D2D2D2",
+      "preview_id": null,
+      "price_is_unreliable": false,
+      "stickers": [
         {
-            "auction_ends_at": 1667634833,
-            "auction_highest_bid": null,
-            "auction_highest_bidder": null,
-            "auction_number_of_bids": 0,
-            "custom_price_percentage": 15,
-            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopamie19f0Ob3Yi5FvISJkJKKkPj6NbLDk1RC68phj9bN_Iv9nBrg80FkZmGgLdKVeg46ZFyC_lPrxO25hZTotZ_OmHphuiNx43aJyUa1n1gSOaKu3f6c",
-            "is_commodity": false,
-            "market_name": "SSG 08 | Dragonfire (Factory New)",
-            "market_value": 2735,
-            "name_color": "D2D2D2",
-            "preview_id": "314f2ed36b33",
-            "price_is_unreliable": false,
-            "stickers": [],
-            "wear": 0.05,
-            "published_at": "2022-11-05T07:50:54.575295Z",
-            "id": 92048513,
-            "depositor_stats": {
-                "delivery_rate_recent": 1,
-                "delivery_rate_long": 1,
-                "delivery_time_minutes_recent": 3,
-                "delivery_time_minutes_long": 29,
-                "steam_level_min_range": 21,
-                "steam_level_max_range": 40,
-                "user_has_trade_notifications_enabled": true,
-                "user_is_online": null
-            },
-            "above_recommended_price": 9
+          "sticker_id": 377,
+          "wear": null,
+          "name": "Kawaii Killer Terrorist",
+          "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDARJ_JBNWv7OuIgts1uH3ZQJO7c6xkc6PkaOkYe2Ik2hVsJIgibqV9t2hjAy28kJpNWjzIYGXd1JoNA6G_lHv366x0hEUSJjM"
         },
         {
-            "auction_ends_at": 1667634834,
-            "auction_highest_bid": null,
-            "auction_highest_bidder": null,
-            "auction_number_of_bids": 0,
-            "custom_price_percentage": -3,
-            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5k5SDnvnzIITck29Y_cg_i-rHoYrw3VLs_RZlZ2umLYSTdQc_Zl7ZrwPoxefp18Du7Z-bwHZh6z5iuyiJTfqMXg",
-            "is_commodity": false,
-            "market_name": "AK-47 | Ice Coaled (Field-Tested)",
-            "market_value": 2849,
-            "name_color": "D2D2D2",
-            "preview_id": "2b26bb4fd4d2",
-            "price_is_unreliable": false,
-            "stickers": [
-                {
-                    "sticker_id": 5283,
-                    "wear": null,
-                    "name": "Cloud9 | Antwerp 2022",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRcQljHQva9hZ-BARJ3fDtbt6iiLklkhaaQc25D7Ym3l4baxKSsauvUlzgHv8cm27mUotWh3Abh-hc_Z2umOsbLJassj6yL"
-                },
-                {
-                    "sticker_id": 4925,
-                    "wear": null,
-                    "name": "Great Wave",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRSXHPCTvS53svWHFpmIAVDia2kPQJfw_LYdC994N2kk4XFlKetZb-FlzhUu5Aj3bmUrImj3lay-Bc9Nzv7LIKUIVA8YVjX_Vnox_Cv28FYyXBDZA"
-                },
-                {
-                    "sticker_id": 3945,
-                    "wear": null,
-                    "name": "Baited",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRbSV7RS9u9xcrXUkl7NxcYtLusPwJk7PTEfi5R9eO6lZKMkrn3ar2BlDxU7JUo3L7ErImh3gy1qhVla277ddLBdQc7NA3T8wXvxOu-m9bi6woR5I7k"
-                },
-                {
-                    "sticker_id": 5898,
-                    "wear": null,
-                    "name": "Baby Cerberus",
-                    "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReX0vfFrTi1c7RSmJ3IBZVs6iwODhw0uPNYwJO7c6xkc6IxfT3ZOiJwThX7ZR12L-W8dWm3gGyrxA4Zmr3I9PGdwM4aAnS-VDs366x0lpBDHM_"
-                }
-            ],
-            "wear": 0.193,
-            "published_at": "2022-11-05T07:50:54.712228Z",
-            "id": 92048515,
-            "depositor_stats": {
-                "delivery_rate_recent": 1,
-                "delivery_rate_long": 0.9852941176470589,
-                "delivery_time_minutes_recent": 1,
-                "delivery_time_minutes_long": 1,
-                "steam_level_min_range": 5,
-                "steam_level_max_range": 10,
-                "user_has_trade_notifications_enabled": true,
-                "user_is_online": null
-            },
-            "above_recommended_price": -9
-        },
-        {
-            "auction_ends_at": 1667634833,
-            "auction_highest_bid": null,
-            "auction_highest_bidder": null,
-            "auction_number_of_bids": 0,
-            "custom_price_percentage": 6,
-            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAQ1JmMR1osbaqPQJz7ODYfi9W9eO-m5WFk-TgPLTFnlRD7cFOh-zF_Jn4xg3srUtuZW-iJIDEI1BvZ13UqVm_xurq08Pt6J2cmCYy7yhz5infmECpwUYb3NOh42I",
-            "is_commodity": false,
-            "market_name": "★ Sport Gloves | Scarlet Shamagh (Field-Tested)",
-            "market_value": 43003,
-            "name_color": "8650AC",
-            "preview_id": null,
-            "price_is_unreliable": false,
-            "stickers": [],
-            "wear": 0.354,
-            "published_at": "2022-11-05T07:50:54.867698Z",
-            "id": 92048514,
-            "depositor_stats": {
-                "delivery_rate_recent": 1,
-                "delivery_rate_long": 0.99,
-                "delivery_time_minutes_recent": 5,
-                "delivery_time_minutes_long": 9,
-                "steam_level_min_range": 61,
-                "steam_level_max_range": 99,
-                "user_has_trade_notifications_enabled": true,
-                "user_is_online": null
-            },
-            "above_recommended_price": 0
+          "sticker_id": 965,
+          "wear": null,
+          "name": "Merietta",
+          "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtas6isLhN00szEcC9F6ZLux9ONzvP3Y-yJwTtX6pQj3-uWp9qs2A3n-kRkMjvxLNWcegNqYQ7Z5BHgliqAJ7zD"
         }
-    ]
+      ],
+      "wear": 0.053,
+      "published_at": "2023-04-23T21:07:36.874150Z",
+      "id": 148843931,
+      "depositor_stats": {
+        "delivery_rate_recent": 1,
+        "delivery_rate_long": 0.99,
+        "delivery_time_minutes_recent": 0,
+        "delivery_time_minutes_long": 17,
+        "steam_level_min_range": 5,
+        "steam_level_max_range": 10,
+        "user_has_trade_notifications_enabled": true,
+        "user_is_online": null
+      },
+      "above_recommended_price": 191,
+      "purchase_price": 353
+    },
+    {
+      "auction_ends_at": 1682284227,
+      "auction_highest_bid": null,
+      "auction_highest_bidder": null,
+      "auction_number_of_bids": 0,
+      "custom_price_percentage": 14,
+      "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09G3h5SOhe7LPr7Vn35cpsEl0-2Xrdii3APt-RI4ZG71IdOXelJoZVDX_li7kOu-1MW6uZ_JyHV9-n51hRUaMfs",
+      "is_commodity": false,
+      "market_name": "AK-47 | Elite Build (Field-Tested)",
+      "market_value": 266,
+      "name_color": "D2D2D2",
+      "preview_id": null,
+      "price_is_unreliable": false,
+      "stickers": [
+        {
+          "sticker_id": 5132,
+          "wear": null,
+          "name": "Perfecto | Stockholm 2021",
+          "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEPTTOz_h52CHE59IjtHs6ijLgR03MzEcC9F6ZLmwdPTlqGjau7XxWoGvJRz272Uotqh3FLmrkBvMTvzJNWUdw8_NQqD5BHgljRT2dJr"
+        },
+        {
+          "sticker_id": 4777,
+          "wear": null,
+          "name": "Liquid | 2020 RMR",
+          "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRPQV6CF7b9mMPaQmJ4JBZQs_Skf1Q41afJdTsX796zlYPclaWtMr3Vwm1XuJcpj-uRrdml3ADkqkNrfSmtc1IIUOC7"
+        },
+        {
+          "sticker_id": 4536,
+          "wear": 0.7532175183296204,
+          "name": "Extermination",
+          "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRVTUDfCOG1w8rBXlR6JBBeubSaJwZy1PaGcmUTvI_hzNnSwPb2ZbmEkm4EuJUj276Xo4-mjgew-0BpZG-gcNTDIBh-Pw_rXqC9BQ"
+        },
+        {
+          "sticker_id": 923,
+          "wear": 0.6144185066223145,
+          "name": "Flipsid3 Tactics | Cluj-Napoca 2015",
+          "image": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQFnaFbT8goDVX1RkGghWpL2gZVVm16DOdT5G7t3kxobawPakN-uIwzgDv5Ap0rmVrNyk3FG1-EA-MmjtZNjCmcnHFc4"
+        }
+      ],
+      "wear": 0.346,
+      "published_at": "2023-04-23T21:07:37.029237Z",
+      "id": 148843957,
+      "depositor_stats": {
+        "delivery_rate_recent": 1,
+        "delivery_rate_long": 0.99,
+        "delivery_time_minutes_recent": 0,
+        "delivery_time_minutes_long": 17,
+        "steam_level_min_range": 5,
+        "steam_level_max_range": 10,
+        "user_has_trade_notifications_enabled": true,
+        "user_is_online": null
+      },
+      "above_recommended_price": 8,
+      "purchase_price": 266
+    },
+    {
+      "auction_ends_at": 1682284229,
+      "auction_highest_bid": null,
+      "auction_highest_bidder": null,
+      "auction_number_of_bids": 0,
+      "custom_price_percentage": 11,
+      "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-Khsj2P67UklRc7cF4n-SP9tXw3gLl-BZvamGhIIDAIwQ8NAyB_1C8wO-61pfvup_By3Yw63Uj7GGdwUKpIv7t7w",
+      "is_commodity": false,
+      "market_name": "★ M9 Bayonet | Blue Steel (Field-Tested)",
+      "market_value": 106933,
+      "name_color": "8650AC",
+      "preview_id": "13bbfe513e9c",
+      "price_is_unreliable": false,
+      "stickers": [],
+      "wear": 0.18,
+      "published_at": "2023-04-23T21:07:37.118648Z",
+      "id": 148844032,
+      "depositor_stats": {
+        "delivery_rate_recent": 1,
+        "delivery_rate_long": 1,
+        "delivery_time_minutes_recent": 1,
+        "delivery_time_minutes_long": 2,
+        "steam_level_min_range": 100,
+        "steam_level_max_range": 5000,
+        "user_has_trade_notifications_enabled": false,
+        "user_is_online": null
+      },
+      "above_recommended_price": 5,
+      "purchase_price": 106933
+    }
+  ]
 ]
 ```
 
@@ -1841,7 +1855,7 @@ Emitted when an existing item has been updated. For example, if status changes.
 <summary>Event sample:</summary>
 
 ```json
-42 / trade, ["updated_item", {
+["updated_item", {
     "app_id": 730,
     "auction_auto_withdraw_failed": null,
     "auction_ends_at": 1631921311,
@@ -1884,25 +1898,31 @@ Emitted when someone places a bid for an auction item.
 <summary>Event sample:</summary>
 
 ```json
-42/trade,
 [
-   "auction_update",
-   [
-      {
-         "id":12345,
-         "auction_highest_bid":1234,
-         "auction_highest_bidder":123456,
-         "auction_number_of_bids":1,
-         "auction_ends_at":166763000
-      },
-      {
-         "id":54321,
-         "auction_highest_bid":1234,
-         "auction_highest_bidder":123456,
-         "auction_number_of_bids":1,
-         "auction_ends_at":166763000
-      }
-   ]
+  {
+    "id": 148844336,
+    "above_recommended_price": 10,
+    "auction_highest_bid": 79,
+    "auction_highest_bidder": 3894061,
+    "auction_number_of_bids": 11,
+    "auction_ends_at": 1682284308
+  },
+  {
+    "id": 148844305,
+    "above_recommended_price": 18,
+    "auction_highest_bid": 35,
+    "auction_highest_bidder": 2678443,
+    "auction_number_of_bids": 7,
+    "auction_ends_at": 1682284301
+  },
+  {
+    "id": 148844241,
+    "above_recommended_price": 14,
+    "auction_highest_bid": 203,
+    "auction_highest_bidder": 7905183,
+    "auction_number_of_bids": 17,
+    "auction_ends_at": 1682284289
+  }
 ]
 
 ```
@@ -1919,7 +1939,6 @@ Emitted when the item is not anymore available for withdrawing. Eg. the auction 
 <summary>Event sample:</summary>
 
 ```json
-42/trade,
 [
    "deleted_item",
    [
@@ -1946,61 +1965,26 @@ Emitted when the trade status gets updated.
 <summary>Event sample:</summary>
 
 ```json
-42 / trade, ["trade_status", {
-    "type": "deposit",
-    "data": {
-        "id": 10002,
-        "user_id": 303119,
-        "items": [{ 
-            "asset_id": 27275301674,
-            "created_at": "2022-10-17 16:42:33",
-            "custom_price_percentage": 0,
-            "full_position": 29,
-            "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopb3wflFf1OD3YjoXuY-Jm5aOhcj8NrrFk29u5Mx2gv2P9I702wXs80BqYzvxdY6SIA44aV-E_VLvl-i8h8O_vJ7Ny3tjviAgtmGdwUKuDFVKtQ",
-            "id": 3896059228,
-            "is_commodity": false,
-            "market_name": "StatTrak™ SG 553 | Danger Close (Minimal Wear)",
-            "market_value": 0.27,
-            "name_color": "CF6A32",
-            "position": null,
-            "preview_id": null,
-            "price_is_unreliable": 0,
-            "tradable": true,
-            "tradelock": false,
-            "updated_at": "2022-10-18 11:36:36",
-            "wear": null
-        }],
-        "total_value": 4555,
-        "tradeoffer_id": 10002,
-        "status": 4,
-        "status_message": "Confirming",
-        "metadata": {
-            "auction_item_id": "1aruaja",
-            "auction_highest_bid": 4555,
-            "auction_highest_bidder": 4900627,
-            "auction_number_of_bids": 1,
-            "auction_ends_at": 1631266352,
-            "auction_auto_withdraw_failed": null,
-            "timestamp": null,
-            "price_updated_at": null,
-            "trade_url": null,
-            "bot": null,
-            "total_fee": null,
-            "fee": null,
-            "old_total_value": null,
-            "pending_withdrawal_id": null,
-            "item_position_in_inventory": null,
-            "item_inspected": null,
-            "steam_id": "76561198106192114",
-            "phishingScamDetected": null,
-            "item_validation": null,
-            "possible_abuse_detected_at": null,
-            "penalty": null
+[
+  "trade_status",
+  [
+    {
+      "type": "withdrawal",
+      "data": {
+        "status": 6,
+        "status_message": "Completed",
+        "id": 19179038,
+        "item_id": 148842604,
+        "tradeoffer_id": 148842604,
+        "item": {
+          "market_name": "Sticker | Tyloo | Stockholm 2021",
+          "market_value": 0.31
         },
-        "created_at": "2021-09-10 09:32:14",
-        "updated_at": "2021-09-10 09:32:33"
+        "total_value": 35
+      }
     }
-}]
+  ]
+]
 
 ```
 
@@ -2016,7 +2000,6 @@ Emitted when a deposit fails
 <summary>Event sample:</summary>
 
 ```json
-42/trade,
 [
   "deposit_failed",
   [
